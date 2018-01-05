@@ -63,22 +63,11 @@ body
     letter-spacing: 2px
     .num
       font-size: 2rem
-
-
-  svg
-    background-color: $accent-g
 // Custom Style:
 body
   // Main Page
   .landing
     //display: none
-    .row:first-of-type
-      padding: 1em
-      height: auto
-      .git
-        float: left
-      .options
-        float: right
     .made
       font-size: 1em
       display: block
@@ -94,15 +83,6 @@ body
     top: 0
     color: $white
     display: none
-    .row:first-of-type
-      padding: 1em
-      height: auto
-      .git
-        float: left
-      .options
-        float: right
-    svg
-      background-color: $white
     .row
       .box
         background-color: $white
@@ -128,3 +108,11 @@ body
         color: $white
       & a:hover, & a:active
         color: $light-grey
+  // Both
+  .row:first-of-type
+    padding: 1em
+    height: auto
+    .octicon
+      float: left
+    .options
+      float: right
