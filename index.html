@@ -8,16 +8,40 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>Pomodoro Clock | <a href="https://www.freecodecamp.org/challenges/build-a-pomodoro-clock" target="_blank"> A freeCodeCamp Project </a></h1>
+    <div class="r">
+      <svg width="24px" height="24px">Icon</svg>
+      <svg width="24px" height="24px">Icon</svg>
+    </div>
+    <div class="r">
+      <h1>Pomodoro Clock</h1>
+      <div class="heading-line"> </div>
+      <h2><a href="https://www.freecodecamp.org/challenges/build-a-pomodoro-clock" target="_blank">A freeCodeCamp Project</a></h2>
+    <div class="r">
+    <div class="r main">
+      <div>
+        <svg width="24px" height="24px">Icon</svg>
+        <svg width="24px" height="24px">Icon</svg>
+      </div>
+    </div>
+    <div class="r">
+      <div class="circle active"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
 
-
-
-
-    <span class="made text-center">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="r">
+      <div class="button reset"> reset </div>
+    </div>
+    <div class="r made">
       Made with
       <svg class="coffee" style="width:24px;height:24px" viewBox="0 0 24 24">
         <path fill="#5D4037" d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -26,12 +50,39 @@
       <svg class="heart" style="width:24px;height:24px" viewBox="0 0 24 24">
         <path fill="#DC4444" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />\
       </svg>
-      </br>
       by
       <a target="_blank" href="https://github.com/HaukeGr">Hauke</a>
       &
       <a target="_blank" href="https://github.com/by-Tim-Christiansen">Tim</a>
-    </span>
+    </div>
+
+    <div class="settingspage">
+      <div class="r">
+        <p class="set">
+          Session Length </br>
+          <span class="num"> - <span> 25 </span> + </span>
+        </p>
+      </div>
+      <div class="r">
+        <p class="set">
+          Break Length </br>
+          <span class="num"> - <span> 5 </span> + </span>
+        </p>
+      </div>
+      <div class="r">
+        <p class="set">
+          Color</br>
+          <div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+        </p>
+      </div>
+      <div class="r"></div>
+      <div class="r"></div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
