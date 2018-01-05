@@ -16,10 +16,11 @@ body
   font-family: 'Roboto', sans-serif
   margin: 0
   letter-spacing: 0.5px
+  cursor: default
   // Main Page
   h1
     font-size: 2em
-    font-weight: normal
+    font-weight: 400
     letter-spacing: 1px
   .heading-line
     margin: 0.5em auto 0.5em auto
@@ -28,7 +29,7 @@ body
     width: 12.5em
   h2
     font-size: 1.25em
-    font-weight: lighter
+    font-weight: 300
     letter-spacing: 2px
   .btt
     font-size: 1.25em
@@ -59,21 +60,30 @@ body
   .set
     text-transform: uppercase
     font-size: 1.5em
-    font-weight: lighter
+    font-weight: 300
     letter-spacing: 2px
     .num
-      font-size: 2rem
+      font-size: 4rem
+      cursor: pointer
+  .made
+    font-size: 1em
+    display: block
+    color: $black
+    margin-top: 1em
+    .heart, .coffee
+      vertical-align: text-top
+  svg
+    cursor: pointer
 // Custom Style:
 body
   // Main Page
   .landing
-    //display: none
+    .timeline
+      margin: 5em
+      svg
+        transform: scale(2.5)
     .made
-      font-size: 1em
-      display: block
       color: $black
-      .heart, .coffee
-        vertical-align: text-top
   // Settings Page
   .settingspage
     background-color: $accent-r
@@ -82,7 +92,7 @@ body
     width: 100%
     top: 0
     color: $white
-    display: none
+    transition: ease-in 1000ms
     .row
       .box
         background-color: $white
@@ -94,6 +104,7 @@ body
           height: 4em
           margin: 0.5em
           display: inline-flex
+          cursor: pointer
         .circle.g
           background-color: #2ECC71
         .circle.o
@@ -104,7 +115,7 @@ body
           background-color: #E74C3C
     .row.made
       color: $white
-      & a:link, &:visited
+      & a, & a:link, &:visited
         color: $white
       & a:hover, & a:active
         color: $light-grey
@@ -116,3 +127,5 @@ body
       float: left
     .options
       float: right
+  .hide
+    display: none
