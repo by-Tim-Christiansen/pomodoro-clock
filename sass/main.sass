@@ -47,15 +47,15 @@ body
   a:hover, a:active
     color: $accent-r
     text-decoration: none
-  .circle
+  .total
     width: 1.5em
     height: 1.5em
     margin: 0.25em
     background-color: $light-grey
     border-radius: 5em
     display: inline-block
-  .circle.active
-    background-color: $accent-r
+    &.active
+      background-color: $accent-r
   // Settings Page
   .set
     text-transform: uppercase
@@ -78,12 +78,29 @@ body
 body
   // Main Page
   .landing
-    .timeline
-      margin: 5em
-      svg
-        transform: scale(2.5)
     .made
       color: $black
+    .row.main
+      margin: 1em auto 1em auto
+      // circles
+      .circle
+        width: 100px
+        margin: 6px 6px 20px
+        display: inline-block
+        position: static
+        text-align: center
+        line-height: 1.2
+        canvas
+          vertical-align: top
+      svg.play-pause
+        transform: scale(2)
+        position: absolute
+        margin: -8.5em auto auto -2.5em
+    .row
+      .total:nth-of-type(4)
+        margin-right: 0.5em
+      .total:nth-of-type(5)
+        margin-left: 0.5em
   // Settings Page
   .settingspage
     background-color: $accent-r
@@ -92,26 +109,28 @@ body
     width: 100%
     top: 0
     color: $white
-    transition: ease-in 1000ms
+    visibility: visible
+    opacity: 1
+    transition: visibility 0s, opacity 0.25s ease-in
     .row
       .box
         background-color: $white
         padding: 1em
         display: inline-block
         border-radius: 20px
-        .circle
+        .total
           width: 4em
           height: 4em
           margin: 0.5em
           display: inline-flex
           cursor: pointer
-        .circle.g
+        .total.g
           background-color: #2ECC71
-        .circle.o
+        .total.o
           background-color: #E67E22
-        .circle.b
+        .total.b
           background-color: #3498DB
-        .circle.r
+        .total.r
           background-color: #E74C3C
     .row.made
       color: $white
@@ -128,4 +147,6 @@ body
     .options
       float: right
   .hide
-    display: none
+    visibility: hidden
+    opacity: 0
+    transition: visibility 0s, opacity 0.25s ease-in-out
