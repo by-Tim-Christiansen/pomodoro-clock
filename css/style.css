@@ -23,7 +23,6 @@ body {
     font-size: 1.25em;
     display: inline-block;
     padding: 0.3em 2.75em 0.3em 2.75em;
-    background-color: #E74C3C;
     color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -33,7 +32,6 @@ body {
     text-decoration: none;
     color: #4a4a4a; }
   body a:hover, body a:active {
-    color: #E74C3C;
     text-decoration: none; }
   body .total {
     width: 1.5em;
@@ -42,8 +40,6 @@ body {
     background-color: #D8D8D8;
     border-radius: 5em;
     display: inline-block; }
-    body .total.active {
-      background-color: #E74C3C; }
   body .set {
     text-transform: uppercase;
     font-size: 1.5em;
@@ -88,7 +84,6 @@ body .landing .row .total:nth-of-type(5) {
   margin-left: 0.5em; }
 
 body .settingspage {
-  background-color: #E74C3C;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -135,3 +130,67 @@ body .hide {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.25s ease-in-out; }
+
+body.g .color {
+  color: #2ECC71;
+  fill: #2ECC71; }
+
+body.g .settingspage {
+  background-color: #2ECC71; }
+
+body.g .total.active {
+  background-color: #2ECC71; }
+
+body.g a:hover, body.g a:active {
+  color: #2ECC71; }
+
+body.g .btt {
+  background-color: #2ECC71; }
+
+body.o .color {
+  color: #E67E22;
+  fill: #E67E22; }
+
+body.o .settingspage {
+  background-color: #E67E22; }
+
+body.o .total.active {
+  background-color: #E67E22; }
+
+body.o a:hover, body.o a:active {
+  color: #E67E22; }
+
+body.o .btt {
+  background-color: #E67E22; }
+
+body.b .color {
+  color: #3498DB;
+  fill: #3498DB; }
+
+body.b .settingspage {
+  background-color: #3498DB; }
+
+body.b .total.active {
+  background-color: #3498DB; }
+
+body.b a:hover, body.b a:active {
+  color: #3498DB; }
+
+body.b .btt {
+  background-color: #3498DB; }
+
+body.r .color {
+  color: #E74C3C;
+  fill: #E74C3C; }
+
+body.r .settingspage {
+  background-color: #E74C3C; }
+
+body.r .total.active {
+  background-color: #E74C3C; }
+
+body.r a:hover, body.r a:active {
+  color: #E74C3C; }
+
+body.r .btt {
+  background-color: #E74C3C; }

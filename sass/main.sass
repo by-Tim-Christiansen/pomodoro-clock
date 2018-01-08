@@ -35,7 +35,6 @@ body
     font-size: 1.25em
     display: inline-block
     padding: 0.3em 2.75em 0.3em 2.75em
-    background-color: $accent-r
     color: $white
     text-transform: uppercase
     letter-spacing: 3px
@@ -45,7 +44,6 @@ body
     text-decoration: none
     color: $black
   a:hover, a:active
-    color: $accent-r
     text-decoration: none
   .total
     width: 1.5em
@@ -54,8 +52,6 @@ body
     background-color: $light-grey
     border-radius: 5em
     display: inline-block
-    &.active
-      background-color: $accent-r
   // Settings Page
   .set
     text-transform: uppercase
@@ -103,7 +99,6 @@ body
         margin-left: 0.5em
   // Settings Page
   .settingspage
-    background-color: $accent-r
     position: absolute
     height: 100%
     width: 100%
@@ -125,13 +120,13 @@ body
           display: inline-flex
           cursor: pointer
         .total.g
-          background-color: #2ECC71
+          background-color: $accent-g
         .total.o
-          background-color: #E67E22
+          background-color: $accent-o
         .total.b
-          background-color: #3498DB
+          background-color: $accent-b
         .total.r
-          background-color: #E74C3C
+          background-color: $accent-r
     .row.made
       color: $white
       & a, & a:link, &:visited
@@ -150,3 +145,52 @@ body
     visibility: hidden
     opacity: 0
     transition: visibility 0s, opacity 0.25s ease-in-out
+// Color Classes
+body.g
+  .color
+    color: $accent-g
+    fill: $accent-g
+  .settingspage
+    background-color: $accent-g
+  .total.active
+    background-color: $accent-g
+  a:hover, a:active
+    color: $accent-g
+  .btt
+    background-color: $accent-g
+body.o
+  .color
+    color: $accent-o
+    fill: $accent-o
+  .settingspage
+    background-color: $accent-o
+  .total.active
+    background-color: $accent-o
+  a:hover, a:active
+    color: $accent-o
+  .btt
+    background-color: $accent-o
+body.b
+  .color
+    color: $accent-b
+    fill: $accent-b
+  .settingspage
+    background-color: $accent-b
+  .total.active
+    background-color: $accent-b
+  a:hover, a:active
+    color: $accent-b
+  .btt
+    background-color: $accent-b
+body.r
+  .color
+    color: $accent-r
+    fill: $accent-r
+  .settingspage
+    background-color: $accent-r
+  .total.active
+    background-color: $accent-r
+  a:hover, a:active
+    color: $accent-r
+  .btt
+    background-color: $accent-r
