@@ -73,7 +73,7 @@ body .landing .row.main {
     body .landing .row.main .circle canvas {
       vertical-align: top; }
   body .landing .row.main svg.play-pause {
-    transform: scale(2);
+    transform: scale(1.5);
     position: absolute;
     margin: -8.5em auto auto -2.5em; }
 

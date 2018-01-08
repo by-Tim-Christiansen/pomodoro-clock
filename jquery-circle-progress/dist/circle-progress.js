@@ -449,7 +449,7 @@
     getValue: function() {
       return this.value;
     },
-    
+
     /**
      * Set current value (with smooth animation transition).
      * @protected
