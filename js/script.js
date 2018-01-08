@@ -5,7 +5,7 @@ $(document).ready(function(){
     startAngle: -Math.PI / 4 * 2,
     value: 0.7,
     size: 160,
-    fill: {color: "#E67E22"}
+    fill: {color: "#E74C3C"}
   });
 
   // animate timer-circle when page loads
