@@ -1,0 +1,188 @@
+// Colors:
+$accent-g: #2ECC71
+$accent-o: #E67E22
+$accent-b: #3498DB
+$accent-r: #E74C3C
+$background: #F8F8F8
+$black: rgb(74, 74, 74)
+$white: #FFFFFF
+$light-grey: #D8D8D8
+
+//General Styles
+body
+  text-align: center
+  background-color: $background
+  color: $black
+  font-family: 'Roboto', sans-serif
+  margin: 0
+  letter-spacing: 0.5px
+  cursor: default
+  // Main Page
+  h1
+    font-size: 2em
+    font-weight: 400
+    letter-spacing: 1px
+  .heading-line
+    margin: 0.5em auto 0.5em auto
+    background-color: $black
+    height: 0.1em
+    width: 12.5em
+  h2
+    font-size: 1.25em
+    font-weight: 300
+    letter-spacing: 2px
+  .btt
+    font-size: 1.25em
+    display: inline-block
+    padding: 0.3em 2.75em 0.3em 2.75em
+    color: $white
+    text-transform: uppercase
+    letter-spacing: 3px
+    border-radius: 100px
+    margin: 1em auto 1em auto
+    cursor: pointer
+  a:link, a:visited
+    text-decoration: none
+    color: $black
+  a:hover, a:active
+    text-decoration: none
+  .total
+    width: 1.5em
+    height: 1.5em
+    margin: 0.25em
+    background-color: $light-grey
+    border-radius: 5em
+    display: inline-block
+  // Settings Page
+  .set
+    text-transform: uppercase
+    font-size: 1.5em
+    font-weight: 300
+    letter-spacing: 2px
+    .num
+      font-size: 4rem
+      cursor: pointer
+  .made
+    font-size: 1em
+    display: block
+    color: $black
+    margin-top: 1em
+    .heart, .coffee
+      vertical-align: text-top
+      cursor: default
+  svg
+    cursor: pointer
+// Custom Style:
+body
+  // Main Page
+  .landing
+    .made
+      color: $black
+    .row.main
+      margin: 1em auto 1em auto
+      svg.play-pause
+        transform: scale(2)
+        position: absolute
+        margin: -8.5em auto auto -2.5em
+    .row
+      .total:nth-of-type(4)
+        margin-right: 0.5em
+      .total:nth-of-type(5)
+        margin-left: 0.5em
+  // Settings Page
+  .settingspage
+    position: absolute
+    height: 100%
+    width: 100%
+    top: 0
+    color: $white
+    visibility: visible
+    opacity: 1
+    transition: visibility 0s, opacity 0.25s ease-in
+    .row
+      .box
+        background-color: $white
+        padding: 1em
+        display: inline-block
+        border-radius: 20px
+        .total
+          width: 4em
+          height: 4em
+          margin: 0.5em
+          display: inline-flex
+          cursor: pointer
+        .total.g
+          background-color: $accent-g
+        .total.o
+          background-color: $accent-o
+        .total.b
+          background-color: $accent-b
+        .total.r
+          background-color: $accent-r
+    .row.made
+      color: $white
+      & a, & a:link, &:visited
+        color: $white
+      & a:hover, & a:active
+        color: $light-grey
+  // Both
+  .row:first-of-type
+    padding: 1em
+    height: auto
+    .octicon
+      float: left
+    .options
+      float: right
+  .hide
+    visibility: hidden
+    opacity: 0
+    transition: visibility 0s, opacity 0.25s ease-in-out
+// Color Classes
+body.g
+  .color
+    color: $accent-g
+    fill: $accent-g
+  .settingspage
+    background-color: $accent-g
+  .total.active
+    background-color: $accent-g
+  a:hover, a:active
+    color: $accent-g
+  .btt
+    background-color: $accent-g
+body.o
+  .color
+    color: $accent-o
+    fill: $accent-o
+  .settingspage
+    background-color: $accent-o
+  .total.active
+    background-color: $accent-o
+  a:hover, a:active
+    color: $accent-o
+  .btt
+    background-color: $accent-o
+body.b
+  .color
+    color: $accent-b
+    fill: $accent-b
+  .settingspage
+    background-color: $accent-b
+  .total.active
+    background-color: $accent-b
+  a:hover, a:active
+    color: $accent-b
+  .btt
+    background-color: $accent-b
+body.r
+  .color
+    color: $accent-r
+    fill: $accent-r
+  .settingspage
+    background-color: $accent-r
+  .total.active
+    background-color: $accent-r
+  a:hover, a:active
+    color: $accent-r
+  .btt
+    background-color: $accent-r
