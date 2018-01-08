@@ -5,7 +5,7 @@ $(document).ready(function(){
     startAngle: -Math.PI / 4 * 2,
     value: 0.7,
     size: 160,
-    fill: {color: "#E74C3C"}
+    fill: {color: "#E74C3C"},
   });
 
   // animate timer-circle when page loads
@@ -17,25 +17,29 @@ $(document).ready(function(){
       case 'total g cpicker':
         $("body").removeClass().addClass("g");
         c.circleProgress({
-          fill: {color: "#2ECC71"}
+          fill: {color: "#2ECC71"},
+          animation: false
         });
         break;
       case 'total o cpicker':
         $("body").removeClass().addClass("o");
         c.circleProgress({
-          fill: {color: "#E67E22"}
+          fill: {color: "#E67E22"},
+          animation: false
         });
         break;
       case 'total b cpicker':
         $("body").removeClass().addClass("b");
         c.circleProgress({
-          fill: {color: "#3498DB"}
+          fill: {color: "#3498DB"},
+          animation: false
         });
         break;
       case 'total r cpicker':
         $("body").removeClass().addClass("r");
         c.circleProgress({
-          fill: {color: "#E74C3C"}
+          fill: {color: "#E74C3C"},
+          animation: false
         });
         break;
     }
