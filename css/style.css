@@ -55,6 +55,11 @@ body {
     body .set .num {
       font-size: 4rem;
       cursor: pointer; }
+      body .set .num:hover {
+        opacity: 0.7;
+        transition: all ease 0.2s; }
+    body .set .value {
+      font-size: 4rem; }
   body .made {
     font-size: 1em;
     display: block;

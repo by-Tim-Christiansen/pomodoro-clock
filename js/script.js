@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
+  // declare variables
   var c = $('#circle');
+  var sessionLength = 25, breakLength = 5;
+
   c.circleProgress({
     startAngle: -Math.PI / 4 * 2,
     value: 0.7,
@@ -8,7 +11,23 @@ $(document).ready(function(){
     fill: {color: "#E74C3C"},
   });
 
-  // animate timer-circle when page loads
+  // adjust session and break length
+  $(".num").click(function() {
+    if ($(this).hasClass("session-adj") && $(this).html("-")) {
+      sessionLength -= 1;
+    }
+    else if($(this).hasClass("session-adj") && $(this).html("+")) {
+      sessionLength += 1;
+    }
+    else if($(this).hasClass("break-adj") && $(this).html("-")) {
+      breakLength -= 1;
+    }
+    else if($(this).hasClass("break-adj") && $(this).html("+")) {
+      breakLength += 1;
+    }
+    $(".session").text(sessionLength);
+    $(".break").text(breakLength);
+  });
 
   // change color theme
     $(".cpicker").click(function() {
