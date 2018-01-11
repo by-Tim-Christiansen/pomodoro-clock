@@ -11,23 +11,43 @@ $(document).ready(function(){
     fill: {color: "#E74C3C"},
   });
 
+// make sure session and break values stay between 0 and 60
+function checkVal(value) {
+  if(value >= 0 && value <= 60) {
+    return true;
+  }
+}
+
   // adjust session and break length
-  $(".num").click(function() {
-    if ($(this).hasClass("session-adj") && $(this).html("-")) {
+$(".num").click(function() {
+  var classOfEl = $(this).attr("class");
+  switch(classOfEl){
+    case "num session-":
+    if (checkVal(sessionLength - 1)) {
       sessionLength -= 1;
+      $(".session").text(sessionLength);
     }
-    else if($(this).hasClass("session-adj") && $(this).html("+")) {
-      sessionLength += 1;
-    }
-    else if($(this).hasClass("break-adj") && $(this).html("-")) {
-      breakLength -= 1;
-    }
-    else if($(this).hasClass("break-adj") && $(this).html("+")) {
-      breakLength += 1;
-    }
-    $(".session").text(sessionLength);
-    $(".break").text(breakLength);
-  });
+      break;
+    case "num session+":
+      if (checkVal(sessionLength + 1)) {
+        sessionLength += 1;
+        $(".session").text(sessionLength);
+      }
+      break;
+    case "num break-":
+      if (checkVal(breakLength - 1)) {
+        breakLength -= 1;
+        $(".break").text(breakLength);
+      }
+      break;
+    case "num break+":
+      if (checkVal(breakLength + 1)) {
+        breakLength += 1;
+        $(".break").text(breakLength);
+      }
+     break;
+  }
+});
 
   // change color theme
     $(".cpicker").click(function() {
