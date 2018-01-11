@@ -1,4 +1,10 @@
 body {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
   text-align: center;
   background-color: #F8F8F8;
   color: #4a4a4a;
@@ -49,6 +55,11 @@ body {
     body .set .num {
       font-size: 4rem;
       cursor: pointer; }
+      body .set .num:hover {
+        opacity: 0.7;
+        transition: all ease 0.2s; }
+    body .set .value {
+      font-size: 4rem; }
   body .made {
     font-size: 1em;
     display: block;
