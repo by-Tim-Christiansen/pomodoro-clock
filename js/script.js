@@ -3,13 +3,37 @@ $(document).ready(function(){
   // declare variables
   var c = $('#circle');
   var sessionLength = 25, breakLength = 5;
+  var currentTime = 0;
 
   c.circleProgress({
     startAngle: -Math.PI / 4 * 2,
-    value: 0.7,
+    value: 1,
     size: 160,
     fill: {color: "#E74C3C"},
   });
+
+  // startTimer on click
+    $("#play").click(function() {
+      c.circleProgress({
+        animationStartValue: 1,
+        value: 0,
+      });
+      var pomoTimer = new Timer();
+      var selectedTime = sessionLength * 60;
+      pomoTimer.on("ontick", function() {
+        currentTime += 1 / selectedTime;
+        c.circleProgress({
+          animationStartValue: currentTime - (1 / selectedTime),
+          value: currentTime,
+        });
+      });
+      pomoTimer.start(selectedTime).on('end', function () {
+        c.circleProgress({
+          animationStartValue: currentTime,
+          value: 1,
+        });
+      });
+    });
 
 // make sure session and break values stay between 0 and 60
 function checkVal(value) {
@@ -77,11 +101,12 @@ $(".num").click(function() {
     });
 
   // toggle between timer and settings page
-  $('.options').click(function() {
-    if ( $(this).closest(".container").hasClass("landing") ){
-      $('.settingspage').removeClass('hide');
-    } else {
-      $('.settingspage').addClass('hide');
-    }
-  });
+
+$('.options').click(function() {
+  if ( $(this).closest(".container").hasClass("landing") ){
+    $('.settingspage').removeClass('hide');
+  } else {
+    $('.settingspage').addClass('hide');
+  }
+});
 });
