@@ -18,6 +18,9 @@ $(document).ready(function(){
   // start timer when play button is clicked
     $(".play-pause").click(function() {
       $("#play, #pause").toggleClass("hide");
+    });
+    $("#play").click(function() {
+      if($(".timeDigital").html() == (sessionLength + ":00")) {
       c.circleProgress({
         animationStartValue: 1,
         value: 0,
@@ -25,7 +28,10 @@ $(document).ready(function(){
       });
       var selectedTime = sessionLength * 60;
       pomoTimer.on("ontick", function() {
-        $(".timeDigital").text(pomoTimer.getDuration());
+        var ms = pomoTimer.getDuration();
+        var minutes = Math.floor(ms / 60000);
+        var seconds = ((ms % 60000) / 1000).toFixed(0);
+        $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
         currentTime += 1 / selectedTime;
         c.circleProgress({
           animationStartValue: currentTime - (1 / selectedTime),
@@ -39,6 +45,14 @@ $(document).ready(function(){
           value: 1,
         });
       });
+    }
+    else {
+      pomoTimer.start();
+    }
+    });
+
+    $("#pause").click(function() {
+      pomoTimer.pause();
     });
 
     $(".reset").click(function() {
@@ -53,7 +67,7 @@ $(document).ready(function(){
 
 // make sure session and break values stay between 0 and 60
 function checkVal(value) {
-  if(value >= 0 && value <= 60) {
+  if(value >= 1 && value <= 60) {
     return true;
   }
 }
