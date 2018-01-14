@@ -1,10 +1,11 @@
 $(document).ready(function(){
-
   // declare variables
   var c = $('#circle');
   var sessionLength = 25, breakLength = 5;
   var currentTime = 0;
+  var pomoTimer = new Timer();
 
+  //animate circle when page loads
   c.circleProgress({
     startAngle: -Math.PI / 4 * 2,
     value: 1,
@@ -12,13 +13,13 @@ $(document).ready(function(){
     fill: {color: "#E74C3C"},
   });
 
-  // startTimer on click
-    $("#play").click(function() {
+  // start timer when play button is clicked
+    $(".play-pause").click(function() {
+      $("#play, #pause").toggleClass("hide");
       c.circleProgress({
         animationStartValue: 1,
         value: 0,
       });
-      var pomoTimer = new Timer();
       var selectedTime = sessionLength * 60;
       pomoTimer.on("ontick", function() {
         currentTime += 1 / selectedTime;
@@ -26,6 +27,7 @@ $(document).ready(function(){
           animationStartValue: currentTime - (1 / selectedTime),
           value: currentTime,
         });
+        $(".timeDigital").text(pomoTimer.getDuration());
       });
       pomoTimer.start(selectedTime).on('end', function () {
         c.circleProgress({
@@ -33,6 +35,14 @@ $(document).ready(function(){
           value: 1,
         });
       });
+    });
+
+    $(".reset").click(function() {
+      pomoTimer.stop();
+        c.circleProgress({
+          value: 1,
+          animationStartValue: currentTime,
+        });
     });
 
 // make sure session and break values stay between 0 and 60
@@ -50,12 +60,14 @@ $(".num").click(function() {
     if (checkVal(sessionLength - 1)) {
       sessionLength -= 1;
       $(".session").text(sessionLength);
+      $(".timeDigital").text(sessionLength + ":00");
     }
       break;
     case "num session+":
       if (checkVal(sessionLength + 1)) {
         sessionLength += 1;
         $(".session").text(sessionLength);
+        $(".timeDigital").text(sessionLength + ":00");
       }
       break;
     case "num break-":
