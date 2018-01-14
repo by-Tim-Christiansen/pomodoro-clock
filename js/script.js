@@ -1,33 +1,43 @@
+var c = $('#circle');
+c.circleProgress({
+  startAngle: -Math.PI / 4 * 2,
+  value: 1,
+  size: 160,
+  fill: {color: "#E74C3C"},
+  animation: { duration: 1500, easing: "circleProgressEasing"}
+});
+
 $(document).ready(function(){
   // declare variables
-  var c = $('#circle');
   var sessionLength = 25, breakLength = 5;
   var currentTime = 0;
   var pomoTimer = new Timer();
 
   //animate circle when page loads
-  c.circleProgress({
-    startAngle: -Math.PI / 4 * 2,
-    value: 1,
-    size: 160,
-    fill: {color: "#E74C3C"},
-  });
 
   // start timer when play button is clicked
     $(".play-pause").click(function() {
       $("#play, #pause").toggleClass("hide");
+    });
+    $("#play").click(function() {
+      if($(".timeDigital").html() == (sessionLength + ":00")) {
       c.circleProgress({
         animationStartValue: 1,
         value: 0,
+        animation: {duration: 1000}
       });
       var selectedTime = sessionLength * 60;
       pomoTimer.on("ontick", function() {
+        var ms = pomoTimer.getDuration();
+        var minutes = Math.floor(ms / 60000);
+        var seconds = ((ms % 60000) / 1000).toFixed(0);
+        $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
         currentTime += 1 / selectedTime;
         c.circleProgress({
           animationStartValue: currentTime - (1 / selectedTime),
           value: currentTime,
+          animation: { duration: 1000, easing: "linear"}
         });
-        $(".timeDigital").text(pomoTimer.getDuration());
       });
       pomoTimer.start(selectedTime).on('end', function () {
         c.circleProgress({
@@ -35,6 +45,14 @@ $(document).ready(function(){
           value: 1,
         });
       });
+    }
+    else {
+      pomoTimer.start();
+    }
+    });
+
+    $("#pause").click(function() {
+      pomoTimer.pause();
     });
 
     $(".reset").click(function() {
@@ -43,11 +61,13 @@ $(document).ready(function(){
           value: 1,
           animationStartValue: currentTime,
         });
+        $(".timeDigital").text(sessionLength + ":00");
+        currentTime = 0;
     });
 
 // make sure session and break values stay between 0 and 60
 function checkVal(value) {
-  if(value >= 0 && value <= 60) {
+  if(value >= 1 && value <= 60) {
     return true;
   }
 }
