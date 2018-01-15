@@ -1,5 +1,5 @@
-//animate circle when page loads
-var c = $('#circle');
+//animate timer circle when page loads
+var c = $('#circle'); // declare variable to skim on typing
 c.circleProgress({
   startAngle: -Math.PI / 4 * 2,
   value: 1,
@@ -8,62 +8,82 @@ c.circleProgress({
   animation: { duration: 1500, easing: "circleProgressEasing"}
 });
 
+
 $(document).ready(function(){
-  // declare variables
+
+  // declare variables for timer
   var sessionLength = 25, breakLength = 5;
-  var currentTime = 0;
+  var timeProgress = sessionLength;
   var pomoTimer = new Timer();
 
-  // start timer when play button is clicked
+    // interacting with timer
     $(".play-pause").click(function() {
-      $("#play, #pause").toggleClass("hide");
-    });
-    $(".play-pause").click(function() {
-      if(pomoTimer.getStatus() == 'initialized') {
-      c.circleProgress({
-        animationStartValue: 1,
-        value: 0,
-        animation: {duration: 1000}
-      });
-      var selectedTime = sessionLength * 60;
+
+      // start timer from scratch
+      if(pomoTimer.getStatus() == 'initialized' || pomoTimer.getStatus() == 'stopped') {
+        c.circleProgress({
+          animationStartValue: 1,
+          value: 0,
+          animation: {duration: 1000}
+        });
+      var timeInSeconds = sessionLength * 60; // convert minutes to seconds
+      timeProgress = 0;
+
+      // do this every second:
       pomoTimer.on("ontick", function() {
+        // convert current time progress to MM:SS format
         var ms = pomoTimer.getDuration();
         var minutes = Math.floor(ms / 60000);
         var seconds = ((ms % 60000) / 1000).toFixed(0);
         $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
-        currentTime += 1 / selectedTime;
+        timeProgress += 1 / timeInSeconds; // divide session length into equal pieces and add one every second
         c.circleProgress({
-          animationStartValue: currentTime - (1 / selectedTime),
-          value: currentTime,
+          animationStartValue: timeProgress - (1 / timeInSeconds),
+          value: timeProgress,
           animation: { duration: 1000, easing: "linear"}
         });
       });
-      pomoTimer.start(selectedTime).on('end', function () {
+
+      // start timer and define what to do when it has expired
+      pomoTimer.start(timeInSeconds).on('end', function () {
         c.circleProgress({
-          animationStartValue: currentTime,
+          animationStartValue: timeProgress,
           value: 1,
         });
       });
     }
-    else if (pomoTimer.getStatus() == 'paused') {
-      pomoTimer.start();
-    }
-    else {
+
+    // pause the timer
+    else if (pomoTimer.getStatus() == 'started') {
       pomoTimer.pause();
     }
+
+    // continue after timer was paused
+    else {
+      pomoTimer.start();
+    }
+
     });
 
+    // reset timer
     $(".reset").click(function() {
       pomoTimer.stop();
         c.circleProgress({
           value: 1,
-          animationStartValue: currentTime,
+          animationStartValue: timeProgress,
         });
+        $("#play").removeClass("hide");
+        $("#pause").addClass("hide");
+        timeProgress = 0;
         $(".timeDigital").text(sessionLength + ":00");
-        currentTime = 0;
     });
 
-// make sure session and break values stay between 0 and 60
+    // switch between play and pause button
+      $(".play-pause").click(function() {
+        $("#play, #pause").toggleClass("hide");
+      });
+
+// make sure session and break values stay between 1 and 60
 function checkVal(value) {
   if(value >= 1 && value <= 60) {
     return true;
@@ -131,12 +151,13 @@ $(".num").click(function() {
     });
 
   // toggle between timer and settings page
+  $('.options').click(function() {
+    if ( $(this).closest(".container").hasClass("landing") ){
+      $('.settingspage').removeClass('hide');
+    }
+    else {
+      $('.settingspage').addClass('hide');
+    }
+  });
 
-$('.options').click(function() {
-  if ( $(this).closest(".container").hasClass("landing") ){
-    $('.settingspage').removeClass('hide');
-  } else {
-    $('.settingspage').addClass('hide');
-  }
-});
 });
