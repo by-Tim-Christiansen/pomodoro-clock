@@ -1,3 +1,4 @@
+//animate circle when page loads
 var c = $('#circle');
 c.circleProgress({
   startAngle: -Math.PI / 4 * 2,
@@ -13,14 +14,12 @@ $(document).ready(function(){
   var currentTime = 0;
   var pomoTimer = new Timer();
 
-  //animate circle when page loads
-
   // start timer when play button is clicked
     $(".play-pause").click(function() {
       $("#play, #pause").toggleClass("hide");
     });
-    $("#play").click(function() {
-      if($(".timeDigital").html() == (sessionLength + ":00")) {
+    $(".play-pause").click(function() {
+      if(pomoTimer.getStatus() == 'initialized') {
       c.circleProgress({
         animationStartValue: 1,
         value: 0,
@@ -46,13 +45,12 @@ $(document).ready(function(){
         });
       });
     }
-    else {
+    else if (pomoTimer.getStatus() == 'paused') {
       pomoTimer.start();
     }
-    });
-
-    $("#pause").click(function() {
+    else {
       pomoTimer.pause();
+    }
     });
 
     $(".reset").click(function() {
