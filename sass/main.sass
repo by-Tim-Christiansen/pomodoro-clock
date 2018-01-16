@@ -78,6 +78,7 @@ body
       cursor: default
   svg
     cursor: pointer
+    transition: all 500ms
 // Custom Style:
 body
   // Main Page
@@ -100,8 +101,10 @@ body
       .total:nth-of-type(5)
         margin-left: 0.5em
     .timeDigital
-      font-size: 2em
+      font-size: 1.75em
       margin: 0 0 0.5em 0
+      font-weight: 300
+      letter-spacing: 2px
   // Settings Page
   .settingspage
     position: absolute
@@ -124,14 +127,23 @@ body
           margin: 0.5em
           display: inline-flex
           cursor: pointer
+          transition: all 500ms
         .total.g
           background-color: $accent-g
+          &:hover
+            background-color: $accent-g-h
         .total.o
           background-color: $accent-o
+          &:hover
+            background-color: $accent-o-h
         .total.b
           background-color: $accent-b
+          &:hover
+            background-color: $accent-b-h
         .total.r
           background-color: $accent-r
+          &:hover
+            background-color: $accent-r-h
     .row.made
       color: $white
       & a, & a:link, &:visited
@@ -147,14 +159,18 @@ body
     .options
       float: right
   .hide
+    transition: visibility 0.25s, opacity 0.25s ease-out
     visibility: hidden
     opacity: 0
-    transition: visibility 0s, opacity 0.25s ease-in-out
+
 // Color Classes
 body.g
   .color
     color: $accent-g
     fill: $accent-g
+  svg:hover
+    color: $accent-g-h
+    fill: $accent-g-h
   .settingspage
     background-color: $accent-g
   .total.active
@@ -169,6 +185,9 @@ body.o
   .color
     color: $accent-o
     fill: $accent-o
+  svg:hover
+    color: $accent-o-h
+    fill: $accent-o-h
   .settingspage
     background-color: $accent-o
   .total.active
@@ -183,6 +202,9 @@ body.b
   .color
     color: $accent-b
     fill: $accent-b
+  svg:hover
+    color: $accent-b-h
+    fill: $accent-b-h
   .settingspage
     background-color: $accent-b
   .total.active
@@ -197,6 +219,9 @@ body.r
   .color
     color: $accent-r
     fill: $accent-r
+  svg:hover
+    color: $accent-r-h
+    fill: $accent-r-h
   .settingspage
     background-color: $accent-r
   .total.active
