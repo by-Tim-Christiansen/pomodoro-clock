@@ -60,7 +60,8 @@ body {
       vertical-align: text-top;
       cursor: default; }
   body svg {
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all 500ms; }
 
 body .landing .made {
   color: #4a4a4a; }
@@ -83,8 +84,10 @@ body .landing .row .total:nth-of-type(5) {
   margin-left: 0.5em; }
 
 body .landing .timeDigital {
-  font-size: 2em;
-  margin: 0 0 0.5em 0; }
+  font-size: 1.75em;
+  margin: 0 0 0.5em 0;
+  font-weight: 300;
+  letter-spacing: 2px; }
 
 body .settingspage {
   position: absolute;
@@ -105,15 +108,24 @@ body .settingspage {
       height: 4em;
       margin: 0.5em;
       display: inline-flex;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 500ms; }
     body .settingspage .row .box .total.g {
       background-color: #2ECC71; }
+      body .settingspage .row .box .total.g:hover {
+        background-color: #28a85f; }
     body .settingspage .row .box .total.o {
       background-color: #E67E22; }
+      body .settingspage .row .box .total.o:hover {
+        background-color: #cc701f; }
     body .settingspage .row .box .total.b {
       background-color: #3498DB; }
+      body .settingspage .row .box .total.b:hover {
+        background-color: #2c7eb5; }
     body .settingspage .row .box .total.r {
       background-color: #E74C3C; }
+      body .settingspage .row .box .total.r:hover {
+        background-color: #c24032; }
   body .settingspage .row.made {
     color: #FFFFFF; }
     body .settingspage .row.made a, body .settingspage .row.made a:link, body .settingspage .row.made:visited {
@@ -130,13 +142,17 @@ body .row:first-of-type {
     float: right; }
 
 body .hide {
+  transition: visibility 0.25s, opacity 0.25s ease-out;
   visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.25s ease-in-out; }
+  opacity: 0; }
 
 body.g .color {
   color: #2ECC71;
   fill: #2ECC71; }
+
+body.g svg:hover {
+  color: #28a85f;
+  fill: #28a85f; }
 
 body.g .settingspage {
   background-color: #2ECC71; }
@@ -157,6 +173,10 @@ body.o .color {
   color: #E67E22;
   fill: #E67E22; }
 
+body.o svg:hover {
+  color: #cc701f;
+  fill: #cc701f; }
+
 body.o .settingspage {
   background-color: #E67E22; }
 
@@ -176,6 +196,10 @@ body.b .color {
   color: #3498DB;
   fill: #3498DB; }
 
+body.b svg:hover {
+  color: #2c7eb5;
+  fill: #2c7eb5; }
+
 body.b .settingspage {
   background-color: #3498DB; }
 
@@ -194,6 +218,10 @@ body.b .btt:hover, body.b .btt:active {
 body.r .color {
   color: #E74C3C;
   fill: #E74C3C; }
+
+body.r svg:hover {
+  color: #c24032;
+  fill: #c24032; }
 
 body.r .settingspage {
   background-color: #E74C3C; }
