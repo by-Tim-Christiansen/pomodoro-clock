@@ -12,9 +12,11 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5;
+  var sessionLength = 0.05, breakLength = 5;
   var timeProgress = sessionLength;
   var pomoTimer = new Timer();
+  var totalSessions = 0;
+  var currentColor = "#E74C3C";
 
     // interacting with timer
     $(".play-pause").click(function() {
@@ -50,6 +52,11 @@ $(document).ready(function(){
           animationStartValue: timeProgress,
           value: 1,
         });
+        $(".timeDigital").text("0:00");
+        $("#play").removeClass("hide");
+        $("#pause").addClass("hide");
+        totalSessions += 1;
+        $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
       });
     }
 
@@ -126,6 +133,7 @@ $(".num").click(function() {
   // change color theme
   function changeTheme(colorClass, hex) {
     $("body").removeClass().addClass(colorClass);
+    $(".active").css("background-color", hex);
     c.circleProgress({
       fill: {color: hex},
       animation: false
