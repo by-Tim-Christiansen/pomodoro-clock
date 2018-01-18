@@ -21,6 +21,7 @@ body
   margin: 0
   letter-spacing: 0.5px
   cursor: default
+  overflow: hidden
   // Main Page
   h1
     font-size: 2em
@@ -60,14 +61,12 @@ body
     border-radius: 5em
     display: inline-block
   // Settings Page
-  .set
+  .description
     text-transform: uppercase
     font-size: 1.5em
     font-weight: 300
     letter-spacing: 2px
-    .num
-      font-size: 4rem
-      cursor: pointer
+    margin-bottom: 1rem
   .made
     font-size: 1em
     display: block
@@ -108,7 +107,7 @@ body
   // Settings Page
   .settingspage
     position: absolute
-    height: 100%
+    height: 109vh
     width: 100%
     top: 0
     color: $white
@@ -116,15 +115,29 @@ body
     opacity: 1
     transition: visibility 0s, opacity 0.25s ease-in
     .row
+      .set
+        display: flex
+        align-items: baseline
+        justify-content: center
+        margin-bottom: 1rem
+        .num
+          width: 2.5em
+          font-size: 2em
+          cursor: pointer
+        .session, .break
+          font-size: 2em
+          font-weight: 300
+          align-self: center
+          padding: 0 0.25em 0 0.25em
       .box
         background-color: $white
-        padding: 1em
+        padding: 0.75em
         display: inline-block
         border-radius: 20px
         .total
-          width: 4em
-          height: 4em
-          margin: 0.5em
+          width: 3.5em
+          height: 3.5em
+          margin: 0.25em
           display: inline-flex
           cursor: pointer
           transition: all 500ms
@@ -144,12 +157,18 @@ body
           background-color: $accent-r
           &:hover
             background-color: $accent-r-h
+      svg
+        fill: $white
+      svg:hover, svg:active
+        fill: $light-grey
+        color: $light-grey
     .row.made
       color: $white
       & a, & a:link, &:visited
         color: $white
       & a:hover, & a:active
         color: $light-grey
+
   // Both
   .row:first-of-type
     padding: 1em
