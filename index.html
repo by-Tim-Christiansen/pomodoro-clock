@@ -94,11 +94,11 @@
         <div class="row">
           <a href="https://github.com/by-Tim-Christiansen/pomodoro-clock" target="_blank">
               <svg width="32" height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
-                <path fill="#FFFFFF" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
             </svg>
           </a>
           <svg class="options" width="32px" height="32px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
               <g id="Stylesheet" transform="translate(-73.000000, -274.000000)" fill="#FFFFFF" fill-rule="nonzero">
                   <g id="Group" transform="translate(73.000000, 274.000000)">
                       <path d="M12.5333333,4.45333333 L12.5333333,0.533333333 C12.5333333,0.24 12.2933333,0 12,0 C11.7066667,0 11.4666667,0.24 11.4666667,0.533333333 L11.4666667,4.45333333 C9.6,4.72 8.13333333,6.32 8.13333333,8.26666667 C8.13333333,10.2133333 9.6,11.84 11.4666667,12.08 L11.4666667,23.4666667 C11.4666667,23.76 11.7066667,24 12,24 C12.2933333,24 12.5333333,23.76 12.5333333,23.4666667 L12.5333333,12.08 C14.4,11.8133333 15.8666667,10.2133333 15.8666667,8.26666667 C15.8666667,6.32 14.4,4.69333333 12.5333333,4.45333333 Z M12,11.0666667 C10.4533333,11.0666667 9.2,9.81333333 9.2,8.26666667 C9.2,6.72 10.4533333,5.46666667 12,5.46666667 C13.5466667,5.46666667 14.8,6.72 14.8,8.26666667 C14.8,9.81333333 13.5466667,11.0666667 12,11.0666667 Z" id="Shape"></path>
@@ -109,44 +109,53 @@
             </g>
           </svg>
         </div>
-      </div>
-
-      <div class="row">
-        <p class="set">
-          Session Length <br>
-          <span class="num session-"> - </span><span class="session value"> 25 </span><span class="num session+"> + </span>
-        </p>
-      </div>
-      <div class="row">
-        <p class="set">
-          Break Length <br>
-          <span class="num break-"> - </span><span class="break value"> 5 </span><span class="num break+"> + </span>
-        </p>
-      </div>
-      <div class="row">
-        <p class="set">
-          Color<br>
-          <div class="box">
-            <div class="total g cpicker"></div>
-            <div class="total o cpicker"></div>
-            <div class="total b cpicker"></div>
-            <div class="total r cpicker"></div>
+        <div class="row">
+          <div class="description">
+            Session Length
           </div>
-        </p>
-      </div>
-      <div class="row made">
-        Made with
-        <svg class="coffee" style="width:24px;height:24px" viewBox="0 0 24 24">
-          <path fill="#FFFFFF" d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-        </svg>
-        and
-        <svg class="heart" style="width:24px;height:24px" viewBox="0 0 24 24">
-          <path fill="#FFFFFF" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />\
-        </svg>
-        by
-        <a target="_blank" href="https://github.com/HaukeGr">Hauke</a>
-        &
-        <a target="_blank" href="https://github.com/by-Tim-Christiansen">Tim</a>
+          <div class="set">
+            <div class="num session-"> - </div>
+            <div class="session value"> 25 </div>
+            <div class="num session+"> + </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="description">
+            Break Length <br>
+          </div>
+          <div class="set">
+            <div class="num break-"> - </div>
+            <div class="break value"> 5 </div>
+            <div class="num break+"> + </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="description">
+            Color<br>
+          </div>
+          <div class="set">
+            <div class="box">
+              <div class="total g cpicker"></div>
+              <div class="total o cpicker"></div>
+              <div class="total b cpicker"></div>
+              <div class="total r cpicker"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row made">
+          Made with
+          <svg class="coffee" style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#FFFFFF" d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+          </svg>
+          and
+          <svg class="heart" style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#FFFFFF" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />\
+          </svg>
+          by
+          <a target="_blank" href="https://github.com/HaukeGr">Hauke</a>
+          &
+          <a target="_blank" href="https://github.com/by-Tim-Christiansen">Tim</a>
+        </div>
       </div>
     </div>
 

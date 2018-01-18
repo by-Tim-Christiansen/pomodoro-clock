@@ -5,7 +5,8 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   letter-spacing: 0.5px;
-  cursor: default; }
+  cursor: default;
+  overflow: hidden; }
   body h1 {
     font-size: 2em;
     font-weight: 400;
@@ -42,16 +43,13 @@ body {
     margin: 0.25em;
     background-color: #D8D8D8;
     border-radius: 5em;
-    display: inline-block;
-    transition: all ease 0.5s; }
-  body .set {
+    display: inline-block; }
+  body .description {
     text-transform: uppercase;
     font-size: 1.5em;
     font-weight: 300;
-    letter-spacing: 2px; }
-    body .set .num {
-      font-size: 4rem;
-      cursor: pointer; }
+    letter-spacing: 2px;
+    margin-bottom: 1rem; }
   body .made {
     font-size: 1em;
     display: block;
@@ -92,22 +90,36 @@ body .landing .timeDigital {
 
 body .settingspage {
   position: absolute;
-  height: 100%;
+  height: 109vh;
   width: 100%;
   top: 0;
   color: #FFFFFF;
   visibility: visible;
   opacity: 1;
   transition: visibility 0s, opacity 0.25s ease-in; }
+  body .settingspage .row .set {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 1rem; }
+    body .settingspage .row .set .num {
+      width: 2.5em;
+      font-size: 2em;
+      cursor: pointer; }
+    body .settingspage .row .set .session, body .settingspage .row .set .break {
+      font-size: 2em;
+      font-weight: 300;
+      align-self: center;
+      padding: 0 0.25em 0 0.25em; }
   body .settingspage .row .box {
     background-color: #FFFFFF;
-    padding: 1em;
+    padding: 0.75em;
     display: inline-block;
     border-radius: 20px; }
     body .settingspage .row .box .total {
-      width: 4em;
-      height: 4em;
-      margin: 0.5em;
+      width: 3.5em;
+      height: 3.5em;
+      margin: 0.25em;
       display: inline-flex;
       cursor: pointer;
       transition: all 500ms; }
@@ -127,6 +139,11 @@ body .settingspage {
       background-color: #E74C3C; }
       body .settingspage .row .box .total.r:hover {
         background-color: #c24032; }
+  body .settingspage .row svg {
+    fill: #FFFFFF; }
+  body .settingspage .row svg:hover, body .settingspage .row svg:active {
+    fill: #D8D8D8;
+    color: #D8D8D8; }
   body .settingspage .row.made {
     color: #FFFFFF; }
     body .settingspage .row.made a, body .settingspage .row.made a:link, body .settingspage .row.made:visited {
@@ -159,8 +176,7 @@ body.g .settingspage {
   background-color: #2ECC71; }
 
 body.g .total.active {
-  background-color: #2ECC71;
-  }
+  background-color: #2ECC71; }
 
 body.g a:hover, body.g a:active {
   color: #2ECC71; }
