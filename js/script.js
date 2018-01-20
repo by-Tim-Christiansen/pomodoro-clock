@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 0.05, breakLength = 5;
+  var sessionLength = 25, breakLength = 5;
   var timeProgress = sessionLength;
   var pomoTimer = new Timer();
   var totalSessions = 0;
