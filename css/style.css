@@ -113,6 +113,9 @@ body .settingspage {
       width: 2.5em;
       font-size: 2em;
       cursor: pointer; }
+    body .settingspage .row .set .num:hover {
+      opacity: 0.8;
+      transition: all ease 0.2s; }
     body .settingspage .row .set .session, body .settingspage .row .set .break {
       font-size: 2em;
       font-weight: 300;
