@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5;
+  var sessionLength = 1, breakLength = 5;
   var timeProgress = sessionLength;
   var pomoTimer = new Timer();
   var totalSessions = 0;
@@ -28,26 +28,26 @@ $(document).ready(function(){
           value: 0,
           animation: {duration: 1000}
         });
-      var timeInSeconds = sessionLength * 60; // convert minutes to seconds
+      var timeInSeconds = sessionLength * 60 * 10; // convert minutes to seconds
       timeProgress = 0;
 
       // do this every second:
-      pomoTimer.on("ontick", function() {
+      setTimeout(function() {pomoTimer.on("ontick", function() {
         // convert current time progress to MM:SS format
         var ms = pomoTimer.getDuration();
-        var minutes = Math.floor(ms / 60000);
+        var minutes = Math.floor(ms / 60000 / 10);
         var seconds = ((ms % 60000) / 1000).toFixed(0);
         $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
         timeProgress += 1 / timeInSeconds; // divide session length into equal pieces and add one every second
         c.circleProgress({
           animationStartValue: timeProgress - (1 / timeInSeconds),
           value: timeProgress,
-          animation: { duration: 1000, easing: "linear"}
+          animation: { duration: 100, easing: "linear"}
         });
       });
 
       // start timer and define what to do when it has expired
-      pomoTimer.start(timeInSeconds).on('end', function () {
+      pomoTimer.start(timeInSeconds / 10).on('end', function () {
         c.circleProgress({
           animationStartValue: timeProgress,
           value: 1,
@@ -58,7 +58,8 @@ $(document).ready(function(){
         totalSessions += 1;
         $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
       });
-    }
+    }, 1000);
+  }
 
     // pause the timer
     else if (pomoTimer.getStatus() == 'started') {
