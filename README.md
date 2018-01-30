@@ -10,14 +10,14 @@ Our Timer shows how much of the 25 minutes are over yet. The user can start, sto
 
 ### Resources
 #### Design
-- Play/Pause Icons by Thays Malcher from https://thenounproject.com/thamalcher/
-- Options Icon by Gregor Cresnar from https://thenounproject.com/grega.cresnar/
-- Octicon Icon from https://github.com/logos
-- Colors from https://www.materialui.co/flatuicolors
-- Font from https://fonts.google.com/specimen/Roboto
+- play/pause icons by Thays Malcher from https://thenounproject.com/thamalcher/
+- options icon by Gregor Cresnar from https://thenounproject.com/grega.cresnar/
+- octicon icon from https://github.com/logos
+- colors from https://www.materialui.co/flatuicolors
+- font from https://fonts.google.com/specimen/Roboto
 #### CSS Frameworks
-- Responsive boilerplate http://getskeleton.com/
+- responsive boilerplate http://getskeleton.com/
 #### JS Libaries...
-- jQuery Library: https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-- Timer Library: https://github.com/husa/timer.js
-- jQuery Plugin: https://github.com/kottenator/jquery-circle-progress
+- jQuery library: https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+- timer library: https://github.com/husa/timer.js
+- jQuery plugin: https://github.com/kottenator/jquery-circle-progress
