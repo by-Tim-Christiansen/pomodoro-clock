@@ -5,14 +5,14 @@ c.circleProgress({
   value: 1,
   size: 160,
   fill: {color: "#E74C3C"},
-  animation: { duration: 1500, easing: "circleProgressEasing"}
+  animation: { duration: 1000, easing: "circleProgressEasing"}
 });
 
 
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 1, breakLength = 5;
+  var sessionLength = 25, breakLength = 5;
   var timeProgress = sessionLength;
   var pomoTimer = new Timer();
   var totalSessions = 0;
@@ -37,7 +37,12 @@ $(document).ready(function(){
         var ms = pomoTimer.getDuration();
         var minutes = Math.floor(ms / 60000);
         var seconds = ((ms % 60000) / 1000).toFixed(0);
-        $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
+        if (((seconds < 10 ? '0' : '') + seconds) == '60') {
+          $(".timeDigital").text(minutes + 1 + ":00");
+        }
+        else {
+          $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
+        }
         timeProgress += 1 / timeInSeconds; // divide session length into equal pieces and add one every second
         c.circleProgress({
           animationStartValue: timeProgress - (1 / timeInSeconds),
@@ -52,7 +57,7 @@ $(document).ready(function(){
           animationStartValue: timeProgress,
           value: 1,
         });
-        $(".timeDigital").text("0:00");
+        $(".timeDigital").text(sessionLength + ":00");
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
         totalSessions += 1;
@@ -79,6 +84,7 @@ $(document).ready(function(){
         c.circleProgress({
           value: 1,
           animationStartValue: timeProgress,
+          animation: {duration: 1000, easing: "circleProgressEasing"}
         });
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
