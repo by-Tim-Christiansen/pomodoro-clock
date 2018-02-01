@@ -1,6 +1,5 @@
 ## Pomodoro Clock
 
-
 A FreeCodeCamp challenge where we are supposed to build a Pomodoro Clock. Yeah!
 https://www.freecodecamp.org/challenges/build-a-pomodoro-clock
 
