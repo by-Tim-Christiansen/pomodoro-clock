@@ -35,7 +35,7 @@ $(document).ready(function(){
       setTimeout(function() {pomoTimer.on("ontick", function() {
         // convert current time progress to MM:SS format
         var ms = pomoTimer.getDuration();
-        var minutes = Math.floor(ms / 60000 / 10);
+        var minutes = Math.floor(ms / 60000);
         var seconds = ((ms % 60000) / 1000).toFixed(0);
         $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
         timeProgress += 1 / timeInSeconds; // divide session length into equal pieces and add one every second
