@@ -17,6 +17,7 @@ $(document).ready(function(){
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
+  var isSession;
 
     // interacting with timer
     $(".play-pause").click(function() {
@@ -26,10 +27,16 @@ $(document).ready(function(){
         c.circleProgress({
           animationStartValue: 1,
           value: 0,
-          animation: {duration: 1000}
+          animation: {duration: 1000, easing: "circleProgressEasing"}
         });
       var timeInSeconds = sessionLength * 60 * 10; // convert minutes to seconds
       timeProgress = 0;
+      if ($(".timeDigital").text() == sessionLength + ":00") {
+        isSession = true;
+      }
+      else {
+        isSession = false;
+      }
 
       // do this every second:
       setTimeout(function() {pomoTimer.on("ontick", function() {
@@ -61,7 +68,9 @@ $(document).ready(function(){
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
         totalSessions += 1;
-        $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
+        if (isSession) {
+          $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
+        }
       });
     }, 1000);
   }
