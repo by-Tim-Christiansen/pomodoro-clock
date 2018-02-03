@@ -186,7 +186,8 @@ body.g .settingspage {
   background-color: #2ECC71; }
 
 body.g .total.active {
-  background-color: #2ECC71; }
+  background-color: #2ECC71;
+  transition: all ease 0.5s; }
 
 body.g a:hover, body.g a:active {
   color: #2ECC71; }
@@ -209,7 +210,8 @@ body.o .settingspage {
   background-color: #E67E22; }
 
 body.o .total.active {
-  background-color: #E67E22; }
+  background-color: #E67E22;
+  transition: all ease 0.5s; }
 
 body.o a:hover, body.o a:active {
   color: #E67E22; }
@@ -232,7 +234,8 @@ body.b .settingspage {
   background-color: #3498DB; }
 
 body.b .total.active {
-  background-color: #3498DB; }
+  background-color: #3498DB;
+  transition: all ease 0.5s; }
 
 body.b a:hover, body.b a:active {
   color: #3498DB; }
@@ -255,7 +258,8 @@ body.r .settingspage {
   background-color: #E74C3C; }
 
 body.r .total.active {
-  background-color: #E74C3C; }
+  background-color: #E74C3C;
+  transition: all ease 0.5s; }
 
 body.r a:hover, body.r a:active {
   color: #E74C3C; }
