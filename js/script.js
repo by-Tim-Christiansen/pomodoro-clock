@@ -13,7 +13,6 @@ $(document).ready(function(){
 
   // declare variables for timer
   var sessionLength = 25, breakLength = 5;
-  var timeProgress = sessionLength;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -29,11 +28,10 @@ $(document).ready(function(){
           value: 0,
           animation: {duration: 1000, easing: "circleProgressEasing"}
         });
-      var timeInSeconds = sessionLength * 60 * 10; // convert minutes to seconds
-      timeProgress = 0;
+      var timeInSeconds = sessionLength * 60; // convert minutes to seconds
 
       // do this every second:
-      setTimeout(function() {pomoTimer.on("ontick", function() {
+      pomoTimer.on("ontick", function() {
         // convert current time progress to MM:SS format
         var ms = pomoTimer.getDuration();
         var minutes = Math.floor(ms / 60000);
@@ -44,25 +42,22 @@ $(document).ready(function(){
         else {
           $(".timeDigital").text(minutes + ":" + (seconds < 10 ? '0' : '') + seconds);
         }
-        timeProgress += 1 / timeInSeconds; // divide session length into equal pieces and add one every second
-        c.circleProgress({
-          animationStartValue: timeProgress - (1 / timeInSeconds),
-          value: timeProgress,
-          animation: { duration: 100, easing: "linear"}
-        });
       });
 
-      // start timer and define what to do when it has expired
-      pomoTimer.start(timeInSeconds / 10).on('end', function () {
+      pomoTimer.on("onstart", function() {
         c.circleProgress({
-          animationStartValue: timeProgress,
+          animationStartValue: 0,
           value: 1,
+          animation: {duration: timeInSeconds * 1000, easing: 'linear'}
         });
+      });
+      // start timer and define what to do when it has expired
+      setTimeout(function() {pomoTimer.start(timeInSeconds).on('end', function () {
         $(".timeDigital").text(sessionLength + ":00");
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
-        $("#break").removeClass("hide")
-        playAlert('bottle')
+        $("#break").removeClass("hide");
+        playAlert('bottle');
         totalSessions += 1;
           $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
       });
