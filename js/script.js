@@ -61,6 +61,8 @@ $(document).ready(function(){
         $(".timeDigital").text(sessionLength + ":00");
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
+        $("#break").removeClass("hide")
+        playAlert('bottle')
         totalSessions += 1;
           $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
       });
