@@ -7,7 +7,7 @@
   'use strict'
 
   var defaultOptions = {
-    tick    : 0.1,
+    tick    : 1,
     onstart : null,
     ontick  : null,
     onpause : null,
