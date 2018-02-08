@@ -67,6 +67,7 @@ $(document).ready(function(){
     // pause the timer
     else if (pomoTimer.getStatus() == 'started') {
       pomoTimer.pause();
+      c.circleProgress('widget').stop();
     }
 
     // continue after timer was paused
