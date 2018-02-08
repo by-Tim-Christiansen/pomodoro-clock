@@ -17,3 +17,4 @@ Have a look on the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wi
 - jQuery library: https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
 - timer library: https://github.com/husa/timer.js
 - jQuery plugin: https://github.com/kottenator/jquery-circle-progress
+- JS library to play sound alerts: https://github.com/azer/alert
