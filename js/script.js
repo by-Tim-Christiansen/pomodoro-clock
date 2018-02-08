@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 1, breakLength = 5;
+  var sessionLength = 25, breakLength = 5;
   var timeProgress = sessionLength;
   var pomoTimer = new Timer();
   var totalSessions = 0;
@@ -55,6 +55,8 @@ $(document).ready(function(){
         $(".timeDigital").text("0:00");
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
+        $("#break").removeClass("hide")
+        playAlert('bottle')
         totalSessions += 1;
         $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
       });

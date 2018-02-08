@@ -84,6 +84,26 @@ body
   .landing
     .made
       color: $black
+    .row.pop-up
+      background-color: #FFFFFF
+      position: relative
+      z-index: 2
+      padding: 4.5em 0 4.5em 0
+      border-radius: 1em
+      box-shadow: 10px 10px 36px -14px rgba(74,74,74,1)
+      margin-bottom: -19em
+      h2
+        font-size: 3em
+      .btt:first-of-type
+        margin-right: 1em
+      .btt:last-of-type
+        margin-left: 1em
+      @media only screen and (max-width: 850px)
+        h2
+          margin: 0 1em 0.75em 1em
+        .btt
+          margin: 0.5em 1em 0.5em 1em
+          display: block
     .row.main
       margin: 1em auto -5.5em auto
       .play-pause
