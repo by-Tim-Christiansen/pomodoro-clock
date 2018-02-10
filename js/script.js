@@ -17,6 +17,8 @@ $(document).ready(function(){
   var totalSessions = 0;
   var currentColor = "#E74C3C";
   var isSession;
+  var timeInSeconds;
+  var timeProgress = 0;
 
     // interacting with timer
     $(".play-pause").click(function() {
@@ -28,7 +30,7 @@ $(document).ready(function(){
           value: 0,
           animation: {duration: 1000, easing: "circleProgressEasing"}
         });
-      var timeInSeconds = sessionLength * 60; // convert minutes to seconds
+        timeInSeconds = sessionLength * 60;
 
       // do this every second:
       pomoTimer.on("ontick", function() {
@@ -48,7 +50,7 @@ $(document).ready(function(){
         c.circleProgress({
           animationStartValue: 0,
           value: 1,
-          animation: {duration: timeInSeconds * 1000, easing: 'linear'}
+          animation: {duration: pomoTimer.getDuration(), easing: 'linear'}
         });
       });
       // start timer and define what to do when it has expired
@@ -59,7 +61,7 @@ $(document).ready(function(){
         $("#break").removeClass("hide");
         playAlert('bottle');
         totalSessions += 1;
-          $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
+        $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
       });
     }, 1000);
   }
@@ -67,24 +69,29 @@ $(document).ready(function(){
     // pause the timer
     else if (pomoTimer.getStatus() == 'started') {
       pomoTimer.pause();
-      c.circleProgress('widget').stop();
+      $(c.circleProgress('widget')).stop();
     }
 
     // continue after timer was paused
     else {
       pomoTimer.start();
+      c.circleProgress({
+        animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds *1000)),
+        value: 1,
+        animation: {duration: pomoTimer.getDuration(), easing: "linear"}
+      });
     }
 
     });
 
     // reset timer
     $(".reset").click(function() {
-      pomoTimer.stop();
         c.circleProgress({
+          animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds *1000)),
           value: 1,
-          animationStartValue: timeProgress,
           animation: {duration: 1000, easing: "circleProgressEasing"}
         });
+        pomoTimer.stop();
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
         timeProgress = 0;
