@@ -12,17 +12,19 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5;
+  var sessionLength = 0.25, breakLength = 5;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
-  var isSession;
+  var isSession = true;
   var timeInSeconds;
-  var timeProgress = 0;
 
     // interacting with timer
     $(".play-pause").click(function() {
+      runTimer(sessionLength);
+    });
 
+    function runTimer(time) {
       // start timer from scratch
       if(pomoTimer.getStatus() == 'initialized' || pomoTimer.getStatus() == 'stopped') {
         c.circleProgress({
@@ -30,7 +32,7 @@ $(document).ready(function(){
           value: 0,
           animation: {duration: 1000, easing: "circleProgressEasing"}
         });
-        timeInSeconds = sessionLength * 60;
+        timeInSeconds = time * 60;
 
       // do this every second:
       pomoTimer.on("ontick", function() {
@@ -55,13 +57,19 @@ $(document).ready(function(){
       });
       // start timer and define what to do when it has expired
       setTimeout(function() {pomoTimer.start(timeInSeconds).on('end', function () {
-        $(".timeDigital").text(sessionLength + ":00");
+        $(".timeDigital").text(time + ":00");
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
-        $("#break").removeClass("hide");
+        $("#break-popup").removeClass("hide");
         playAlert('bottle');
-        totalSessions += 1;
-        $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
+        if (isSession) {
+          $(".start").text("Start Break");
+          totalSessions += 1;
+          $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
+        }
+        else {
+          $(".start").text("Start Work Session");
+        }
       });
     }, 1000);
   }
@@ -81,9 +89,7 @@ $(document).ready(function(){
         animation: {duration: pomoTimer.getDuration(), easing: "linear"}
       });
     }
-
-    });
-
+  }
     // reset timer
     $(".reset").click(function() {
         c.circleProgress({
@@ -94,15 +100,34 @@ $(document).ready(function(){
         pomoTimer.stop();
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
-        timeProgress = 0;
-        $(".timeDigital").text(sessionLength + ":00");
+        $(".timeDigital").text(time + ":00");
     });
 
-    // switch between play and pause button
-      $(".play-pause").click(function() {
-        $("#play, #pause").toggleClass("hide");
-      });
 
+    // switch between play and pause button
+    $(".play-pause").click(function() {
+      $("#play, #pause").toggleClass("hide");
+    });
+
+    // start break/work session or close pop-up after a work/break session has ended
+    $(".start").click(function() {
+      if ($(".start").html() == "Start Break") {
+        $("#break-popup").addClass("hide");
+        runTimer(breakLength);
+        isSession = false;
+      }
+      else {
+        $("#break-popup").addClass("hide");
+        runTimer(sessionLength);
+        isSession =  true;
+      }
+
+      setTimeout(function() {
+        $("#pause").removeClass("hide");
+        $("#play").addClass("hide");
+      }, 1000);
+
+    });
 // make sure session and break values stay between 1 and 60
 function checkVal(value) {
   if(value >= 1 && value <= 60) {
