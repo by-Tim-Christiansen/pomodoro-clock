@@ -1,11 +1,4 @@
 body {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
   text-align: center;
   background-color: #F8F8F8;
   color: #4a4a4a;
@@ -38,6 +31,7 @@ body {
     margin: 1em auto 1em auto;
     cursor: pointer; }
   body .btt:hover, body .btt:active {
+    -webkit-transition: all 250ms;
     transition: all 250ms; }
   body a:link, body a:visited {
     text-decoration: none;
@@ -67,21 +61,47 @@ body {
       cursor: default; }
   body svg {
     cursor: pointer;
+    -webkit-transition: all 500ms;
     transition: all 500ms; }
 
 body .landing .made {
   color: #4a4a4a; }
 
+body .landing .row.pop-up {
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+  padding: 4.5em 0 4.5em 0;
+  border-radius: 1em;
+  -webkit-box-shadow: 10px 10px 36px -14px #4a4a4a;
+          box-shadow: 10px 10px 36px -14px #4a4a4a;
+  margin-bottom: -19em; }
+  body .landing .row.pop-up h2 {
+    font-size: 3em; }
+  body .landing .row.pop-up .btt:first-of-type {
+    margin-right: 1em; }
+  body .landing .row.pop-up .btt:last-of-type {
+    margin-left: 1em; }
+  @media only screen and (max-width: 850px) {
+    body .landing .row.pop-up h2 {
+      margin: 0 1em 0.75em 1em; }
+    body .landing .row.pop-up .btt {
+      margin: 0.5em 1em 0.5em 1em;
+      display: block; } }
+
 body .landing .row.main {
   margin: 1em auto -5.5em auto; }
   body .landing .row.main .play-pause {
-    transform: translate(0, -8.5em);
+    -webkit-transform: translate(0, -8.5em);
+            transform: translate(0, -8.5em);
     cursor: pointer;
     display: inline-block; }
     body .landing .row.main .play-pause #play {
-      transform: translate(3em, 0); }
+      -webkit-transform: translate(3em, 0);
+              transform: translate(3em, 0); }
     body .landing .row.main .play-pause #pause {
-      transform: translate(-3em, 0); }
+      -webkit-transform: translate(-3em, 0);
+              transform: translate(-3em, 0); }
 
 body .landing .row .total:nth-of-type(4) {
   margin-right: 0.5em; }
@@ -103,23 +123,28 @@ body .settingspage {
   color: #FFFFFF;
   visibility: visible;
   opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.25s ease-in;
   transition: visibility 0s, opacity 0.25s ease-in; }
   body .settingspage .row .set {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: baseline;
-    justify-content: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 1rem; }
     body .settingspage .row .set .num {
       width: 2.5em;
       font-size: 2em;
       cursor: pointer; }
-    body .settingspage .row .set .num:hover {
-      opacity: 0.8;
-      transition: all ease 0.2s; }
     body .settingspage .row .set .session, body .settingspage .row .set .break {
       font-size: 2em;
       font-weight: 300;
-      align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
       padding: 0 0.25em 0 0.25em; }
   body .settingspage .row .box {
     background-color: #FFFFFF;
@@ -130,8 +155,11 @@ body .settingspage {
       width: 3.5em;
       height: 3.5em;
       margin: 0.25em;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
       display: inline-flex;
       cursor: pointer;
+      -webkit-transition: all 500ms;
       transition: all 500ms; }
     body .settingspage .row .box .total.g {
       background-color: #2ECC71; }
@@ -170,6 +198,7 @@ body .row:first-of-type {
     float: right; }
 
 body .hide {
+  -webkit-transition: visibility 0.25s, opacity 0.25s ease-out;
   transition: visibility 0.25s, opacity 0.25s ease-out;
   visibility: hidden;
   opacity: 0; }
