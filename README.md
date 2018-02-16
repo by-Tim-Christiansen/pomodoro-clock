@@ -2,7 +2,7 @@
 A <a href="https://www.freecodecamp.org/challenges/build-a-pomodoro-clock">FreeCodeCamp challenge</a> where we are supposed to build a timer based on the Pomodoro Technique. Yeah!
 
 ### What is Pomodoro?
-Have a look on the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wikipedia entry</a> to find out more about the awesome Pomodoro Technique, which can make people be way more productive!
+Have a look at the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wikipedia entry</a> to find out more about the awesome Pomodoro Technique, which can make people be way more productive!
 
 ### Resources
 #### Design
