@@ -1,4 +1,10 @@
 body {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   text-align: center;
   background-color: #F8F8F8;
   color: #4a4a4a;
@@ -88,6 +94,8 @@ body .landing .row.pop-up {
     body .landing .row.pop-up .btt {
       margin: 0.5em 1em 0.5em 1em;
       display: block; } }
+    body .landing .row.pop-up .alt-opt {
+      display: inline; }
 
 body .landing .row.main {
   margin: 1em auto -5.5em auto; }
