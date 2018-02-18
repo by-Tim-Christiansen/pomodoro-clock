@@ -94,6 +94,8 @@ body .landing .row.pop-up {
     body .landing .row.pop-up .btt {
       margin: 0.5em 1em 0.5em 1em;
       display: block; } }
+    body .landing .row.pop-up .alt-opt {
+      display: inline; }
 
 body .landing .row.main {
   margin: 1em auto -5.5em auto; }

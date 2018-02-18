@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5;
+  var sessionLength = 0.1, breakLength = 0.05;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -88,7 +88,7 @@ $(document).ready(function(){
         animation: {duration: pomoTimer.getDuration(), easing: "linear"}
       });
     }
-  }
+}
     // reset timer
     $(".reset").click(function() {
         c.circleProgress({
@@ -116,11 +116,13 @@ $(document).ready(function(){
         runTimer(breakLength);
         isSession = false;
       }
+      
       else {
         $(".timeDigital").text(sessionLength + ":00");
         runTimer(sessionLength);
         isSession =  true;
       }
+
       $("#break-popup").addClass("hide");
         $("#pause").removeClass("hide");
         $("#play").addClass("hide");
@@ -128,12 +130,12 @@ $(document).ready(function(){
     });
 
     $(".next").click(function() {
-      $("#break-popup").addClass("hide");
       $(".timeDigital").text(sessionLength + ":00");
       runTimer(sessionLength);
       isSession = true;
-        $("#pause").removeClass("hide");
-        $("#play").addClass("hide");
+      $("#break-popup").addClass("hide");
+      $("#pause").removeClass("hide");
+      $("#play").addClass("hide");
     });
 
 // make sure session and break values stay between 1 and 60
