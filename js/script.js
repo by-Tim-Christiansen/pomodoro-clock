@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 0.25, breakLength = 5;
+  var sessionLength = 0.25, breakLength = 0.15;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -57,7 +57,6 @@ $(document).ready(function(){
       });
       // start timer and define what to do when it has expired
       setTimeout(function() {pomoTimer.start(timeInSeconds).on('end', function () {
-        $(".timeDigital").text(time + ":00");
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
         $("#break-popup").removeClass("hide");
@@ -112,11 +111,13 @@ $(document).ready(function(){
     // start break/work session or close pop-up after a work/break session has ended
     $(".start").click(function() {
       if ($(".start").html() == "Start Break") {
+        $(".timeDigital").text(breakLength + ":00");
         $("#break-popup").addClass("hide");
         runTimer(breakLength);
         isSession = false;
       }
       else {
+        $(".timeDigital").text(sessionLength + ":00");
         $("#break-popup").addClass("hide");
         runTimer(sessionLength);
         isSession =  true;
@@ -128,6 +129,7 @@ $(document).ready(function(){
       }, 1000);
 
     });
+
 // make sure session and break values stay between 1 and 60
 function checkVal(value) {
   if(value >= 1 && value <= 60) {
