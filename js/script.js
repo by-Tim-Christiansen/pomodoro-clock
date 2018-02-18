@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 0.25, breakLength = 0.15;
+  var sessionLength = 25, breakLength = 5;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -83,7 +83,7 @@ $(document).ready(function(){
     else {
       pomoTimer.start();
       c.circleProgress({
-        animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds *1000)),
+        animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds * 1000)),
         value: 1,
         animation: {duration: pomoTimer.getDuration(), easing: "linear"}
       });
@@ -92,7 +92,7 @@ $(document).ready(function(){
     // reset timer
     $(".reset").click(function() {
         c.circleProgress({
-          animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds *1000)),
+          animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds * 1000)),
           value: 1,
           animation: {duration: 1000, easing: "circleProgressEasing"}
         });
@@ -110,24 +110,30 @@ $(document).ready(function(){
 
     // start break/work session or close pop-up after a work/break session has ended
     $(".start").click(function() {
+
       if ($(".start").html() == "Start Break") {
         $(".timeDigital").text(breakLength + ":00");
-        $("#break-popup").addClass("hide");
         runTimer(breakLength);
         isSession = false;
       }
       else {
         $(".timeDigital").text(sessionLength + ":00");
-        $("#break-popup").addClass("hide");
         runTimer(sessionLength);
         isSession =  true;
       }
-
-      setTimeout(function() {
+      $("#break-popup").addClass("hide");
         $("#pause").removeClass("hide");
         $("#play").addClass("hide");
-      }, 1000);
 
+    });
+
+    $(".next").click(function() {
+      $("#break-popup").addClass("hide");
+      $(".timeDigital").text(sessionLength + ":00");
+      runTimer(sessionLength);
+      isSession = true;
+        $("#pause").removeClass("hide");
+        $("#play").addClass("hide");
     });
 
 // make sure session and break values stay between 1 and 60
