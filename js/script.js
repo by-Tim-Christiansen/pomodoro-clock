@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 0.1, breakLength = 0.05;
+  var sessionLength = 0.05, breakLength = 0.025;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -59,16 +59,18 @@ $(document).ready(function(){
       setTimeout(function() {pomoTimer.start(timeInSeconds).on('end', function () {
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
-        $("#break-popup").removeClass("hide");
         playAlert('bottle');
         if (isSession) {
           $(".start").text("Start Break");
           totalSessions += 1;
           $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
+          $(".alt-opt").css("display", "inline");
         }
         else {
           $(".start").text("Start Work Session");
+          $(".alt-opt").css("display", "none");
         }
+        $("#break-popup").removeClass("hide");
       });
     }, 1000);
   }
@@ -99,7 +101,12 @@ $(document).ready(function(){
         pomoTimer.stop();
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
-        $(".timeDigital").text(time + ":00");
+        if (isSession) {
+          $(".timeDigital").text(sessionLength + ":00");
+        }
+        else {
+          $(".timeDigital").text(breakLength + ":00");
+        }
     });
 
 
@@ -116,7 +123,7 @@ $(document).ready(function(){
         runTimer(breakLength);
         isSession = false;
       }
-      
+
       else {
         $(".timeDigital").text(sessionLength + ":00");
         runTimer(sessionLength);
@@ -124,8 +131,8 @@ $(document).ready(function(){
       }
 
       $("#break-popup").addClass("hide");
-        $("#pause").removeClass("hide");
-        $("#play").addClass("hide");
+      $("#pause").removeClass("hide");
+      $("#play").addClass("hide");
 
     });
 
@@ -167,12 +174,18 @@ $(".num").click(function() {
       if (checkVal(breakLength - 1)) {
         breakLength -= 1;
         $(".break").text(breakLength);
+        if (isSession == false) {
+          $(".timeDigital").text(breakLength + ":00");
+        }
       }
       break;
     case "num break+":
       if (checkVal(breakLength + 1)) {
         breakLength += 1;
         $(".break").text(breakLength);
+        if (isSession == false) {
+          $(".timeDigital").text(breakLength + ":00");
+        }
       }
      break;
   }
