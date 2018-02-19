@@ -62,12 +62,14 @@ $(document).ready(function(){
         playAlert('bottle');
         if (isSession) {
           $(".start").text("Start Break");
+          $(".pop-up-header").text("Work session done!");
           totalSessions += 1;
           $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
           $(".alt-opt").css("display", "inline");
         }
         else {
-          $(".start").text("Start Work Session");
+          $(".start").text("Go!");
+          $(".pop-up-header").text("Break is over, let's get back to work!");
           $(".alt-opt").css("display", "none");
         }
         $("#break-popup").removeClass("hide");
