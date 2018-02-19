@@ -59,7 +59,7 @@ $(document).ready(function(){
       setTimeout(function() {pomoTimer.start(timeInSeconds).on('end', function () {
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
-        playAlert('bottle');
+        playAlert('glass');
         if (isSession) {
           $(".start").text("Start Break");
           $(".pop-up-header").text("Work session done!");
