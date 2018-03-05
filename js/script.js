@@ -79,16 +79,16 @@ $(document).ready(function(){
           totalSessions += 1;
           $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
           $(".alt-opt").css("display", "inline");
+          $("#break-popup").removeClass("hide");
         }
         // otherwise it was a break and just the pop-up is changed accordingly
         else {
           $(".start").text("Go!");
           $(".pop-up-header").text("Break is over, let's get back to work!");
           $(".alt-opt").css("display", "none");
+          $("#break-popup").removeClass("hide");
         }
-
-        // show the pop-up
-        $("#break-popup").removeClass("hide");
+        
       })}, 1000);
     }
 
