@@ -70,7 +70,7 @@ $(document).ready(function(){
         // switch from pause icon to play icon and play sound effect
         $("#play").removeClass("hide");
         $("#pause").addClass("hide");
-        playAlert('glass');
+        // DOES NOT WORK ANYMORE: playAlert('glass');
 
         // add a small circle and change the pop-up if the expired session was a work session
         if (isSession) {
