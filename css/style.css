@@ -148,7 +148,7 @@ body .settingspage {
       width: 2.5em;
       font-size: 2em;
       cursor: pointer; }
-    body .settingspage .row .set .session, body .settingspage .row .set .break {
+    body .settingspage .row .set .session, body .settingspage .row .set .break, body .settingspage .row .set .longbreak {
       font-size: 2em;
       font-weight: 300;
       -ms-flex-item-align: center;

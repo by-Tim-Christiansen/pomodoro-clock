@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5;
+  var sessionLength = 25, breakLength = 5, longBreakLength = 15;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -88,7 +88,7 @@ $(document).ready(function(){
           $(".alt-opt").css("display", "none");
           $("#break-popup").removeClass("hide");
         }
-        
+
       })}, 1000);
     }
 
@@ -212,6 +212,24 @@ $(document).ready(function(){
           $(".break").text(breakLength);
           if (isSession == false) {
             $(".timeDigital").text(breakLength + ":00");
+          }
+        }
+        break;
+      case "num longbreak-":
+        if (checkVal(longBreakLength - 1)) {
+          longBreakLength -= 1;
+          $(".longbreak").text(longBreakLength);
+          if (totalSession > 0 && totalSessions % 4 == 0) {
+            $(".timeDigital").text(longBreakLength + ":00");
+          }
+        }
+        break;
+      case "num longbreak+":
+        if (checkVal(longBreakLength + 1)) {
+          longBreakLength += 1;
+          $(".longbreak").text(longBreakLength);
+          if (totalSession > 0 && totalSessions % 4 == 0) {
+            $(".timeDigital").text(longBreakLength + ":00");
           }
         }
         break;
