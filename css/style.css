@@ -104,6 +104,7 @@ body .landing .row.main {
             transform: translate(0, -8.5em);
     cursor: pointer;
     display: inline-block; }
+
     body .landing .row.main .play-pause #play {
       -webkit-transform: translate(3em, 0);
               transform: translate(3em, 0); }

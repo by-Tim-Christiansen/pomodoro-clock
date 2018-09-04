@@ -3,7 +3,7 @@ var c = $('#circle'); // declare variable to skim on typing
 c.circleProgress({
   startAngle: -Math.PI / 4 * 2,
   value: 1,
-  size: 300,
+  size: 160,
   fill: {color: "#E74C3C"},
   animation: { duration: 1000, easing: "circleProgressEasing"}
 });
@@ -12,7 +12,7 @@ c.circleProgress({
 $(document).ready(function(){
 
   // declare variables for timer
-  var sessionLength = 0.05, breakLength = 5, longBreakLength = 15;
+  var sessionLength = 0.05, breakLength = 0.015, longBreakLength = 0.003;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -75,12 +75,10 @@ $(document).ready(function(){
         // add a small circle and change the pop-up if the expired session was a work session
         if (isSession) {
           totalSessions += 1;
-          if (totalSessions % 4 == 0) {
-            $(".start").text("Start Long Break");
-          }
-          else {
-            $(".start").text("Start Break");
-          }
+          $(".start").text("Start Break");
+            if(totalSessions % 4 == 0) {
+              $(".start").text("Start Long Break");
+            }
           $(".pop-up-header").text("Work session done!");
           $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
           $(".alt-opt").css("display", "inline");
