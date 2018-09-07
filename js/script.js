@@ -10,14 +10,15 @@ c.circleProgress({
 
 // main function
 $(document).ready(function(){
-
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5;
+  var sessionLength = 0.05, breakLength = 0.015, longBreakLength = 0.003;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
   var isSession = true;
   var timeInSeconds;
+  var notifTitle = "";
+  var notifBody = "";
 
   // interacting with timer
   $(".play-pause").click(function() {
@@ -74,21 +75,36 @@ $(document).ready(function(){
 
         // add a small circle and change the pop-up if the expired session was a work session
         if (isSession) {
-          $(".start").text("Start Break");
-          $(".pop-up-header").text("Work session done!");
+          notifTitle = "Work Session is over";
+          notifBody = "You've worked enough, time for a break!";
           totalSessions += 1;
+          $(".start").text("Start Break");
+            if(totalSessions % 4 == 0) {
+              $(".start").text("Start Long Break");
+            }
+          $(".pop-up-header").text("Work session done!");
           $(".eight_circles div:nth-of-type(" + totalSessions + ")").addClass("active");
           $(".alt-opt").css("display", "inline");
           $("#break-popup").removeClass("hide");
         }
         // otherwise it was a break and just the pop-up is changed accordingly
         else {
+          notifTitle = "Your break is over";
+          notifBody = "Time to get back to work!";
           $(".start").text("Go!");
           $(".pop-up-header").text("Break is over, let's get back to work!");
           $(".alt-opt").css("display", "none");
           $("#break-popup").removeClass("hide");
         }
-        
+        Push.create(notifTitle, {
+            body: notifBody,
+            icon: 'timer.png',
+            timeout: 4000,
+            onClick: function () {
+                window.focus();
+                this.close();
+            }
+        });
       })}, 1000);
     }
 
@@ -212,6 +228,24 @@ $(document).ready(function(){
           $(".break").text(breakLength);
           if (isSession == false) {
             $(".timeDigital").text(breakLength + ":00");
+          }
+        }
+        break;
+      case "num longbreak-":
+        if (checkVal(longBreakLength - 1)) {
+          longBreakLength -= 1;
+          $(".longbreak").text(longBreakLength);
+          if (totalSession > 0 && totalSessions % 4 == 0) {
+            $(".timeDigital").text(longBreakLength + ":00");
+          }
+        }
+        break;
+      case "num longbreak+":
+        if (checkVal(longBreakLength + 1)) {
+          longBreakLength += 1;
+          $(".longbreak").text(longBreakLength);
+          if (totalSession > 0 && totalSessions % 4 == 0) {
+            $(".timeDigital").text(longBreakLength + ":00");
           }
         }
         break;
