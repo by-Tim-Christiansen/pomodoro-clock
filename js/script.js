@@ -8,10 +8,14 @@ c.circleProgress({
   animation: { duration: 1000, easing: "circleProgressEasing"}
 });
 
+
 // main function
 $(document).ready(function(){
+  if (Push.Permission.has() !== true) {
+    Push.Permission.request(onGranted, onDenied);
+  }
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5, longBreakLength = 15;
+  var sessionLength = 0.25, breakLength = 5, longBreakLength = 15;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -100,6 +104,7 @@ $(document).ready(function(){
             body: notifBody,
             icon: 'timer.png',
             timeout: 4000,
+            tag: "notification",
             onClick: function () {
                 window.focus();
                 this.close();
