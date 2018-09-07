@@ -11,7 +11,7 @@ c.circleProgress({
 // main function
 $(document).ready(function(){
   // declare variables for timer
-  var sessionLength = 0.05, breakLength = 0.015, longBreakLength = 0.003;
+  var sessionLength = 25, breakLength = 5, longBreakLength = 15;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
