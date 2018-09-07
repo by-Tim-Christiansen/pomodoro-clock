@@ -7,12 +7,11 @@ c.circleProgress({
   fill: {color: "#E74C3C"},
   animation: { duration: 1000, easing: "circleProgressEasing"}
 });
-
-
 // main function
 $(document).ready(function(){
+
   if (Push.Permission.has() !== true) {
-    Push.Permission.request(onGranted, onDenied);
+    Push.Permission.request();
   }
   // declare variables for timer
   var sessionLength = 0.25, breakLength = 5, longBreakLength = 15;
@@ -23,6 +22,7 @@ $(document).ready(function(){
   var timeInSeconds;
   var notifTitle = "";
   var notifBody = "";
+
 
   // interacting with timer
   $(".play-pause").click(function() {
@@ -103,7 +103,7 @@ $(document).ready(function(){
         Push.create(notifTitle, {
             body: notifBody,
             icon: 'timer.png',
-            timeout: 4000,
+            timeout: 20000,
             tag: "notification",
             onClick: function () {
                 window.focus();
