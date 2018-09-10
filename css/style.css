@@ -311,3 +311,12 @@ body.r .btt {
 
 body.r .btt:hover, body.r .btt:active {
   background-color: #c24032; }
+
+/* IMPRINT-PAGE */
+
+body .container .imprint {
+  text-align: justify;
+  padding-top: 5em;}
+
+body .container .imprint h2 {
+  font-weight: bold; }
