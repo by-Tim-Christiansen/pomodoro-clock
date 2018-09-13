@@ -14,7 +14,7 @@ $(document).ready(function(){
     Push.Permission.request();
   }
   // declare variables for timer
-  var sessionLength = 0.25, breakLength = 5, longBreakLength = 15;
+  var sessionLength = 25, breakLength = 5, longBreakLength = 15;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
