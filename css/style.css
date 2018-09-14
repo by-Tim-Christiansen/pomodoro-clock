@@ -37,6 +37,7 @@ body {
     margin: 1em auto 1em auto;
     cursor: pointer; }
   body .popup-overlay {
+    display: none;
     z-index: 1000;
     position: absolute;
     bottom: 0;

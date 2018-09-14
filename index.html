@@ -211,7 +211,7 @@
     <script>
       $(document).ready(function(){
         if (!$.cookie('alert')) {
-          $('.popup-overlay').show();
+          $('.popup-overlay').css("display", "block");
           var date = new Date();
           date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
         }
