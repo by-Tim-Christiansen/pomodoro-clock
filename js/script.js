@@ -14,7 +14,7 @@ $(document).ready(function(){
     Push.Permission.request();
   }
   // declare variables for timer
-  var sessionLength = 25, breakLength = 5, longBreakLength = 15;
+  var sessionLength = 0.25, breakLength = 5, longBreakLength = 15;
   var pomoTimer = new Timer();
   var totalSessions = 0;
   var currentColor = "#E74C3C";
@@ -23,6 +23,11 @@ $(document).ready(function(){
   var notifTitle = "";
   var notifBody = "";
 
+  // function to play notification sound
+  function play() {
+    var audio=document.getElementById('audio1');
+    audio.play();
+  }
 
   // interacting with timer
   $(".play-pause").click(function() {
@@ -110,6 +115,7 @@ $(document).ready(function(){
                 this.close();
             }
         });
+        play();
       })}, 1000);
     }
 
