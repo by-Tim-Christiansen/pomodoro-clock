@@ -107,7 +107,7 @@ $(document).ready(function(){
         }
         Push.create(notifTitle, {
             body: notifBody,
-            icon: 'images/timer.png',
+            icon: 'timer.png',
             timeout: 20000,
             tag: "notification",
             onClick: function () {
