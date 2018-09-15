@@ -298,7 +298,7 @@ $(document).ready(function(){
   // toggle between timer and settings page
   $('.options').click(function() {
 
-    if ( $(this).closest(".container").hasClass("landing") ){
+    if ( $('.settingspage').hasClass("hide") ){
       $('.settingspage').removeClass('hide');
     }
     else {
