@@ -37,6 +37,12 @@ $(document).ready(function(){
 
   // interacting with timer
   $(".play-pause").click(function() {
+    if (pomoTimer.getStatus() == 'initialized' ||pomoTimer.getStatus() == 'stopped') {
+      $(".play-pause").css("pointer-events", "none");
+      setTimeout(function() {
+        $(".play-pause").css("pointer-events", "auto");
+      }, 1000);
+    }
     runTimer(sessionLength);
   });
 
