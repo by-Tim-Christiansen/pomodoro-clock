@@ -34,6 +34,16 @@ body {
     border-radius: 100px;
     margin: 0.5em auto 0.5em auto;
     cursor: pointer; }
+  body .popup-overlay {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 1.5em;}
+  body .popup-overlay .cookie-btn {
+    font-size: 1em;
+    display: inline;
+    padding: 0.4em 1.5em 0.4em 1.5em; }
   body .btt:hover, body .btt:active {
     -webkit-transition: all 250ms;
     transition: all 250ms; }

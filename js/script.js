@@ -23,6 +23,11 @@ $(document).ready(function(){
   var notifTitle = "";
   var notifBody = "";
 
+  // function to play notification sound
+  function play() {
+    var audio=document.getElementById('audio1');
+    audio.play();
+  }
 
   // interacting with timer
   $(".play-pause").click(function() {
@@ -110,6 +115,7 @@ $(document).ready(function(){
                 this.close();
             }
         });
+        play();
       })}, 1000);
     }
 
