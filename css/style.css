@@ -10,7 +10,9 @@ body {
   body h1 {
     font-size: 2em;
     font-weight: 400;
-    letter-spacing: 1px; }
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin-bottom: 0; }
   body .heading-line {
     margin: 0.5em auto 0.5em auto;
     background-color: #4a4a4a;
@@ -31,6 +33,7 @@ body {
     margin: 1em auto 1em auto;
     cursor: pointer; }
   body .btt:hover, body .btt:active {
+    -webkit-transition: all 250ms;
     transition: all 250ms; }
   body a:link, body a:visited {
     text-decoration: none;
@@ -60,10 +63,43 @@ body {
       cursor: default; }
   body svg {
     cursor: pointer;
+    -webkit-transition: all 500ms;
     transition: all 500ms; }
 
-body .landing .made {
-  color: #4a4a4a; }
+body header {
+  border-bottom: 2px solid #E74C3C; }
+  body header .container {
+    padding: 1em;
+    height: auto; }
+    body header .container .info-btt {
+      display: inline-block;
+      color: #E74C3C;
+      fill: #E74C3C;
+      float: left; }
+      body header .container .info-btt .hollow {
+        opacity: 1; }
+      body header .container .info-btt .fill {
+        opacity: 0; }
+      body header .container .info-btt:hover .hollow, body header .container .info-btt.active .hollow {
+        opacity: 0;
+        -webkit-transition: all 500ms;
+        transition: all 500ms; }
+      body header .container .info-btt:hover .fill, body header .container .info-btt.active .fill {
+        opacity: 1;
+        -webkit-transition: all 500ms;
+        transition: all 500ms; }
+    body header .container h1 {
+      display: inline-block; }
+      body header .container h1 svg {
+        fill: #E74C3C;
+        margin: 0 5px 0 5px;
+        -webkit-transform: translateY(5px);
+                transform: translateY(5px);
+        cursor: default; }
+    body header .container .options {
+      margin-top: 5px;
+      display: inline-block;
+      float: right; }
 
 body .landing .row.pop-up {
   background-color: #FFFFFF;
@@ -71,7 +107,8 @@ body .landing .row.pop-up {
   z-index: 2;
   padding: 4.5em 0 4.5em 0;
   border-radius: 1em;
-  box-shadow: 10px 10px 36px -14px #4a4a4a;
+  -webkit-box-shadow: 10px 10px 36px -14px #4a4a4a;
+          box-shadow: 10px 10px 36px -14px #4a4a4a;
   margin-bottom: -19em; }
   body .landing .row.pop-up h2 {
     font-size: 3em; }
@@ -89,13 +126,16 @@ body .landing .row.pop-up {
 body .landing .row.main {
   margin: 1em auto -5.5em auto; }
   body .landing .row.main .play-pause {
-    transform: translate(0, -8.5em);
+    -webkit-transform: translate(0, -8.5em);
+            transform: translate(0, -8.5em);
     cursor: pointer;
     display: inline-block; }
     body .landing .row.main .play-pause #play {
-      transform: translate(3em, 0); }
+      -webkit-transform: translate(3em, 0);
+              transform: translate(3em, 0); }
     body .landing .row.main .play-pause #pause {
-      transform: translate(-3em, 0); }
+      -webkit-transform: translate(-3em, 0);
+              transform: translate(-3em, 0); }
 
 body .landing .row .total:nth-of-type(4) {
   margin-right: 0.5em; }
@@ -117,11 +157,18 @@ body .settingspage {
   color: #FFFFFF;
   visibility: visible;
   opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.25s ease-in;
   transition: visibility 0s, opacity 0.25s ease-in; }
   body .settingspage .row .set {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: baseline;
-    justify-content: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 1rem; }
     body .settingspage .row .set .num {
       width: 2.5em;
@@ -130,7 +177,8 @@ body .settingspage {
     body .settingspage .row .set .session, body .settingspage .row .set .break {
       font-size: 2em;
       font-weight: 300;
-      align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
       padding: 0 0.25em 0 0.25em; }
   body .settingspage .row .box {
     background-color: #FFFFFF;
@@ -141,8 +189,11 @@ body .settingspage {
       width: 3.5em;
       height: 3.5em;
       margin: 0.25em;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
       display: inline-flex;
       cursor: pointer;
+      -webkit-transition: all 500ms;
       transition: all 500ms; }
     body .settingspage .row .box .total.g {
       background-color: #2ECC71; }
@@ -172,28 +223,27 @@ body .settingspage {
     body .settingspage .row.made a:hover, body .settingspage .row.made a:active {
       color: #D8D8D8; }
 
-body .imprint-link {
-  margin: 0 0 0.5em 0; }
-
-body .imprint {
-  text-align: justify;
-  padding-top: 5em; }
-  body .imprint h2 {
-    font-weight: bold; }
-
-body .version-link {
-  margin: 0 0 0.25em 0;
-  opacity: 0.7; }
-
-body .row:first-of-type {
-  padding: 1em;
-  height: auto; }
-  body .row:first-of-type .octicon {
+body footer {
+  border-top: 2px solid #E74C3C;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #4a4a4a; }
+  body footer .version-link {
+    margin: .25em auto;
+    opacity: 0.7;
     float: left; }
-  body .row:first-of-type .options {
+  body footer .made {
+    margin: .25em auto;
+    text-align: center; }
+  body footer .imprint-link {
+    margin: .25em auto;
     float: right; }
+  body footer .version-link, body footer .made, body footer .imprint-link {
+    display: inline-block; }
 
 body .hide {
+  -webkit-transition: visibility 0.25s, opacity 0.25s ease-out;
   transition: visibility 0.25s, opacity 0.25s ease-out;
   visibility: hidden;
   opacity: 0; }
@@ -202,7 +252,7 @@ body.g .color {
   color: #2ECC71;
   fill: #2ECC71; }
 
-body.g svg:hover {
+body.g .hover:hover {
   color: #28a85f;
   fill: #28a85f; }
 
@@ -225,7 +275,7 @@ body.o .color {
   color: #E67E22;
   fill: #E67E22; }
 
-body.o svg:hover {
+body.o .hover:hover {
   color: #cc701f;
   fill: #cc701f; }
 
@@ -248,7 +298,7 @@ body.b .color {
   color: #3498DB;
   fill: #3498DB; }
 
-body.b svg:hover {
+body.b .hover:hover {
   color: #2c7eb5;
   fill: #2c7eb5; }
 
@@ -271,7 +321,7 @@ body.r .color {
   color: #E74C3C;
   fill: #E74C3C; }
 
-body.r svg:hover {
+body.r .hover:hover {
   color: #c24032;
   fill: #c24032; }
 

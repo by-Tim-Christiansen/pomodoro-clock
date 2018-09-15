@@ -26,7 +26,9 @@ body
   h1
     font-size: 2em
     font-weight: 400
-    letter-spacing: 1px
+    letter-spacing: 2px
+    line-height: 1.5
+    margin-bottom: 0
   .heading-line
     margin: 0.5em auto 0.5em auto
     background-color: $black
@@ -81,9 +83,39 @@ body
 // Custom Style:
 body
   // Main Page
+  header
+    border-bottom: 2px solid $accent-r
+    .container
+      padding: 1em
+      height: auto
+      .info-btt
+        display: inline-block
+        color: $accent-r
+        fill: $accent-r
+        float: left
+        .hollow
+          opacity: 1
+        .fill
+          opacity: 0
+        &:hover, &.active
+          .hollow
+            opacity: 0
+            transition: all 500ms
+          .fill
+            opacity: 1
+            transition: all 500ms
+      h1
+        display: inline-block
+        svg
+          fill: $accent-r
+          margin: 0 5px 0 5px
+          transform: translateY(5px)
+          cursor: default
+      .options
+        margin-top: 5px
+        display: inline-block
+        float: right
   .landing
-    .made
-      color: $black
     .row.pop-up
       background-color: #FFFFFF
       position: relative
@@ -188,25 +220,25 @@ body
         color: $white
       & a:hover, & a:active
         color: $light-grey
-  // imprint & version
-  .imprint-link
-    margin: 0 0 0.5em 0
-  .imprint
-    text-align: justify
-    padding-top: 5em
-    h2
-      font-weight: bold
-  .version-link
-    margin: 0 0 0.25em 0
-    opacity: 0.7
-  // Both
-  .row:first-of-type
-    padding: 1em
-    height: auto
-    .octicon
+  footer
+    border-top: 2px solid $accent-r
+    position: absolute
+    bottom: 0
+    width: 100%
+    color: $black
+    .version-link
+      margin: .25em auto
+      opacity: 0.7
       float: left
-    .options
+    .made
+      margin: .25em auto
+      text-align: center
+    .imprint-link
+      margin: .25em auto
       float: right
+    .version-link, .made, .imprint-link
+      display: inline-block
+
   .hide
     transition: visibility 0.25s, opacity 0.25s ease-out
     visibility: hidden
@@ -217,7 +249,7 @@ body.g
   .color
     color: $accent-g
     fill: $accent-g
-  svg:hover
+  .hover:hover
     color: $accent-g-h
     fill: $accent-g-h
   .settingspage
@@ -234,7 +266,7 @@ body.o
   .color
     color: $accent-o
     fill: $accent-o
-  svg:hover
+  .hover:hover
     color: $accent-o-h
     fill: $accent-o-h
   .settingspage
@@ -251,7 +283,7 @@ body.b
   .color
     color: $accent-b
     fill: $accent-b
-  svg:hover
+  .hover:hover
     color: $accent-b-h
     fill: $accent-b-h
   .settingspage
@@ -268,7 +300,7 @@ body.r
   .color
     color: $accent-r
     fill: $accent-r
-  svg:hover
+  .hover:hover
     color: $accent-r-h
     fill: $accent-r-h
   .settingspage
