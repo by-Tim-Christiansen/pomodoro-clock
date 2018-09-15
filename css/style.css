@@ -229,7 +229,7 @@ body footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: #4a4a4a;
+  height: 3em;
   z-index: 2;
   background-color: #F8F8F8; }
   body footer .row .version-link {
@@ -241,7 +241,7 @@ body footer {
   body footer .row .version-link, body footer .row .made, body footer .row .imprint-link {
     display: block;
     position: absolute;
-    bottom: .25em;
+    bottom: -2.5em;
     width: 100%; }
 
 body .hide {
