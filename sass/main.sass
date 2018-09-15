@@ -252,18 +252,20 @@ body
     color: $black
     z-index: 2
     background-color: $background
-    .version-link
-      margin: .25em auto
-      opacity: 0.7
-      float: left
-    .made
-      margin: .25em auto
-      text-align: center
-    .imprint-link
-      margin: .25em auto
-      float: right
-    .version-link, .made, .imprint-link
-      display: inline-block
+    .row
+      display: flex
+      align-items: baseline
+      justify-content: center
+      .version-link
+        opacity: 0.7
+        float: left
+        margin-left: 0 !important
+      .imprint-link
+        float: right
+        margin-right: 0 !important
+      .version-link, .made, .imprint-link
+        display: inline-block
+        margin: auto
 
   .hide
     transition: visibility 0.25s, opacity 0.25s ease-out

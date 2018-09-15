@@ -34,18 +34,7 @@ body {
     border-radius: 100px;
     margin: 0.5em auto 0.5em auto;
     cursor: pointer; }
-  body .popup-overlay {
-    display: none;
-    z-index: 1000;
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 1.5em;}
-  body .popup-overlay .cookie-btn {
-    font-size: 1em;
-    display: inline;
-    padding: 0.4em 1.5em 0.4em 1.5em; }
   body .btt:hover, body .btt:active {
-    -webkit-transition: all 250ms;
     transition: all 250ms; }
   body a:link, body a:visited {
     text-decoration: none;
@@ -75,7 +64,6 @@ body {
       cursor: default; }
   body svg {
     cursor: pointer;
-    -webkit-transition: all 500ms;
     transition: all 500ms; }
 
 body header {
@@ -97,19 +85,16 @@ body header {
         opacity: 0; }
       body header .container .info-btt:hover .hollow, body header .container .info-btt.active .hollow {
         opacity: 0;
-        -webkit-transition: all 500ms;
         transition: all 500ms; }
       body header .container .info-btt:hover .fill, body header .container .info-btt.active .fill {
         opacity: 1;
-        -webkit-transition: all 500ms;
         transition: all 500ms; }
     body header .container h1 {
       display: inline-block; }
       body header .container h1 svg {
         fill: #E74C3C;
         margin: 0 5px 0 5px;
-        -webkit-transform: translateY(5px);
-                transform: translateY(5px);
+        transform: translateY(5px);
         cursor: default; }
     body header .container .options {
       margin-top: 5px;
@@ -122,31 +107,20 @@ body .landing {
   width: 100%;
   height: 100%;
   top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   z-index: 0; }
   body .landing .container {
-    -webkit-transform: scale(1.25) translateY(-4.5em);
-            transform: scale(1.25) translateY(-4.5em); }
+    transform: scale(1.25) translateY(-4.5em); }
     body .landing .container .row.pop-up {
       background-color: #FFFFFF;
       position: relative;
       z-index: 2;
       padding: 4.5em 0 4.5em 0;
       border-radius: 1em;
-      -webkit-box-shadow: 10px 10px 36px -14px #4a4a4a;
-              box-shadow: 10px 10px 36px -14px #4a4a4a;
+      box-shadow: 10px 10px 36px -14px #4a4a4a;
       margin-bottom: -19em;
       display: block; }
       body .landing .container .row.pop-up h2 {
@@ -164,16 +138,13 @@ body .landing {
     body .landing .container .row.main {
       margin: 0 auto -5.5em auto; }
       body .landing .container .row.main .play-pause {
-        -webkit-transform: translate(0, -8.5em);
-                transform: translate(0, -8.5em);
+        transform: translate(0, -8.5em);
         cursor: pointer;
         display: inline-block; }
         body .landing .container .row.main .play-pause #play {
-          -webkit-transform: translate(3em, 0);
-                  transform: translate(3em, 0); }
+          transform: translate(3em, 0); }
         body .landing .container .row.main .play-pause #pause {
-          -webkit-transform: translate(-3em, 0);
-                  transform: translate(-3em, 0); }
+          transform: translate(-3em, 0); }
   body .landing .row .total:nth-of-type(4) {
     margin-right: 0.5em; }
   body .landing .row .total:nth-of-type(5) {
@@ -194,32 +165,16 @@ body .settingspage {
   color: #FFFFFF;
   visibility: visible;
   opacity: 1;
-  -webkit-transition: visibility 0s, opacity 0.25s ease-in;
   transition: visibility 0s, opacity 0.25s ease-in;
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
   body .settingspage .row .set {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: baseline;
+    justify-content: center;
     margin: 2em 0; }
     body .settingspage .row .set .num {
       width: 2.5em;
@@ -228,8 +183,7 @@ body .settingspage {
     body .settingspage .row .set .session, body .settingspage .row .set .break, body .settingspage .row .set .longbreak {
       font-size: 2em;
       font-weight: 300;
-      -ms-flex-item-align: center;
-          align-self: center;
+      align-self: center;
       padding: 0 0.25em 0 0.25em; }
   body .settingspage .row .box {
     background-color: #FFFFFF;
@@ -240,11 +194,8 @@ body .settingspage {
       width: 3.5em;
       height: 3.5em;
       margin: 0.25em;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
       display: inline-flex;
       cursor: pointer;
-      -webkit-transition: all 500ms;
       transition: all 500ms; }
     body .settingspage .row .box .total.g {
       background-color: #2ECC71; }
@@ -281,21 +232,22 @@ body footer {
   color: #4a4a4a;
   z-index: 2;
   background-color: #F8F8F8; }
-  body footer .version-link {
-    margin: .25em auto;
-    opacity: 0.7;
-    float: left; }
-  body footer .made {
-    margin: .25em auto;
-    text-align: center; }
-  body footer .imprint-link {
-    margin: .25em auto;
-    float: right; }
-  body footer .version-link, body footer .made, body footer .imprint-link {
-    display: inline-block; }
+  body footer .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center; }
+    body footer .row .version-link {
+      opacity: 0.7;
+      float: left;
+      margin-left: 0 !important; }
+    body footer .row .imprint-link {
+      float: right;
+      margin-right: 0 !important; }
+    body footer .row .version-link, body footer .row .made, body footer .row .imprint-link {
+      display: inline-block;
+      margin: auto; }
 
 body .hide {
-  -webkit-transition: visibility 0.25s, opacity 0.25s ease-out;
   transition: visibility 0.25s, opacity 0.25s ease-out;
   visibility: hidden;
   opacity: 0; }
