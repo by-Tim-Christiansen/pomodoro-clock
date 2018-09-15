@@ -23,10 +23,14 @@ body
   cursor: default
   overflow: hidden
   // Main Page
+  .container
+    max-width: 1200px
   h1
     font-size: 2em
     font-weight: 400
-    letter-spacing: 1px
+    letter-spacing: 2px
+    line-height: 1.5
+    margin-bottom: 0
   .heading-line
     margin: 0.5em auto 0.5em auto
     background-color: $black
@@ -44,7 +48,7 @@ body
     text-transform: uppercase
     letter-spacing: 3px
     border-radius: 100px
-    margin: 1em auto 1em auto
+    margin: 0.5em auto 0.5em auto
     cursor: pointer
   .btt:hover, .btt:active
     transition: all 250ms
@@ -81,39 +85,85 @@ body
 // Custom Style:
 body
   // Main Page
-  .landing
-    .made
-      color: $black
-    .row.pop-up
-      background-color: #FFFFFF
-      position: relative
-      z-index: 2
-      padding: 4.5em 0 4.5em 0
-      border-radius: 1em
-      box-shadow: 10px 10px 36px -14px rgba(74,74,74,1)
-      margin-bottom: -19em
-      h2
-        font-size: 3em
-      .btt:first-of-type
-        margin-right: 1em
-      .btt:last-of-type
-        margin-left: 1em
-      @media only screen and (max-width: 850px)
-        h2
-          margin: 0 1em 0.75em 1em
-        .btt
-          margin: 0.5em 1em 0.5em 1em
-          display: block
-    .row.main
-      margin: 1em auto -5.5em auto
-      .play-pause
-        transform: translate(0, -8.5em)
-        cursor: pointer
+  header
+    border-bottom: 1.5px solid $accent-r
+    background-color: $background
+    z-index: 2
+    position: absolute
+    width: 100%
+    .container
+      padding: 1em
+      height: auto
+      .info-btt
         display: inline-block
-        #play
-          transform: translate(3em, 0)
-        #pause
-          transform: translate(-3em, 0)
+        float: left
+        cursor: pointer
+        .hollow
+          opacity: 1
+        .fill
+          opacity: 0
+        &:hover, &.active
+          .hollow
+            opacity: 0
+            transition: all 500ms
+          .fill
+            opacity: 1
+            transition: all 500ms
+      h1
+        display: inline-block
+        svg
+          fill: $accent-r
+          margin: 0 5px 0 5px
+          transform: translateY(5px)
+          cursor: default
+      .options
+        margin-top: 5px
+        display: inline-block
+        float: right
+        cursor: pointer
+  .landing
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    z-index: 0
+    .container
+      transform: scale(1.25) translateY(-4.5em)
+      .row.pop-up
+        background-color: #FFFFFF
+        position: relative
+        z-index: 2
+        padding: 4.5em 0 4.5em 0
+        border-radius: 1em
+        box-shadow: 10px 10px 36px -14px rgba(74,74,74,1)
+        margin-bottom: -19em
+        display: block
+        h2
+          font-size: 3em
+        .btt:first-of-type
+          margin-right: 1em
+        .btt:last-of-type
+          margin-left: 1em
+        @media only screen and (max-width: 850px)
+          h2
+            margin: 0 1em 0.75em 1em
+          .btt
+            margin: 0.5em 1em 0.5em 1em
+            display: block
+      .row.main
+        margin: 0 auto -5.5em auto
+        .play-pause
+          transform: translate(0, -8.5em)
+          cursor: pointer
+          display: inline-block
+          #play
+            transform: translate(3em, 0)
+          #pause
+            transform: translate(-3em, 0)
     .row
       .total:nth-of-type(4)
         margin-right: 0.5em
@@ -121,30 +171,37 @@ body
         margin-left: 0.5em
     .timeDigital
       font-size: 1.75em
-      margin: 0 0 0.5em 0
+      margin: 0 0 0 0
       font-weight: 300
       letter-spacing: 2px
+    .eight_circles
+      margin: 1em 0
   // Settings Page
   .settingspage
     position: absolute
-    height: 109vh
+    height: 100%
     width: 100%
     top: 0
     color: $white
     visibility: visible
     opacity: 1
     transition: visibility 0s, opacity 0.25s ease-in
+    z-index: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
     .row
       .set
         display: flex
         align-items: baseline
         justify-content: center
-        margin-bottom: 1rem
+        margin: 2em 0
         .num
           width: 2.5em
           font-size: 2em
           cursor: pointer
-        .session, .break
+        .session, .break, .longbreak
           font-size: 2em
           font-weight: 300
           align-self: center
@@ -188,25 +245,26 @@ body
         color: $white
       & a:hover, & a:active
         color: $light-grey
-  // imprint & version
-  .imprint-link
-    margin: 0 0 0.5em 0
-  .imprint
-    text-align: justify
-    padding-top: 5em
-    h2
-      font-weight: bold
-  .version-link
-    margin: 0 0 0.25em 0
-    opacity: 0.7
-  // Both
-  .row:first-of-type
-    padding: 1em
-    height: auto
-    .octicon
+  footer
+    position: absolute
+    bottom: 0
+    width: 100%
+    color: $black
+    z-index: 2
+    background-color: $background
+    .version-link
+      margin: .25em auto
+      opacity: 0.7
       float: left
-    .options
+    .made
+      margin: .25em auto
+      text-align: center
+    .imprint-link
+      margin: .25em auto
       float: right
+    .version-link, .made, .imprint-link
+      display: inline-block
+
   .hide
     transition: visibility 0.25s, opacity 0.25s ease-out
     visibility: hidden
@@ -217,7 +275,7 @@ body.g
   .color
     color: $accent-g
     fill: $accent-g
-  svg:hover
+  .hover:hover
     color: $accent-g-h
     fill: $accent-g-h
   .settingspage
@@ -230,11 +288,13 @@ body.g
     background-color: $accent-g
   .btt:hover, .btt:active
     background-color: $accent-g-h
+  header
+    border-color: $accent-g
 body.o
   .color
     color: $accent-o
     fill: $accent-o
-  svg:hover
+  .hover:hover
     color: $accent-o-h
     fill: $accent-o-h
   .settingspage
@@ -247,11 +307,13 @@ body.o
     background-color: $accent-o
   .btt:hover, .btt:active
     background-color: $accent-o-h
+  header
+    border-color: $accent-o
 body.b
   .color
     color: $accent-b
     fill: $accent-b
-  svg:hover
+  .hover:hover
     color: $accent-b-h
     fill: $accent-b-h
   .settingspage
@@ -264,11 +326,13 @@ body.b
     background-color: $accent-b
   .btt:hover, .btt:active
     background-color: $accent-b-h
+  header
+    border-color: $accent-b
 body.r
   .color
     color: $accent-r
     fill: $accent-r
-  svg:hover
+  .hover:hover
     color: $accent-r-h
     fill: $accent-r-h
   .settingspage
@@ -281,3 +345,15 @@ body.r
     background-color: $accent-r
   .btt:hover, .btt:active
     background-color: $accent-r-h
+  header
+    border-color: $accent-r
+
+// Imprint & Privacy
+
+body.imprint, body.privacy
+  overflow: scroll
+  header, footer
+    position: fixed
+  .imprint, .privacy
+    padding: 6em 0
+    text-align: left
