@@ -1,4 +1,4 @@
-/**
+/*
  * Push v1.0
  * =========
  * A compact, cross-browser solution for the JavaScript Notifications API

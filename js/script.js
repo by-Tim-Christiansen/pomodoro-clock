@@ -1,3 +1,9 @@
+/*
+ * =================================
+ * Copyright (c) 2018 Hauke Grothues
+ * =================================
+ */
+
 //animate timer circle when page loads
 var c = $('#circle'); // declare variable to skim on typing
 c.circleProgress({
