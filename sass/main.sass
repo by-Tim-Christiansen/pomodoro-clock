@@ -246,7 +246,6 @@ body
       & a:hover, & a:active
         color: $light-grey
   footer
-    border-top: 1.5px solid $accent-r
     position: absolute
     bottom: 0
     width: 100%
@@ -289,7 +288,7 @@ body.g
     background-color: $accent-g
   .btt:hover, .btt:active
     background-color: $accent-g-h
-  header, footer
+  header
     border-color: $accent-g
 body.o
   .color
@@ -308,7 +307,7 @@ body.o
     background-color: $accent-o
   .btt:hover, .btt:active
     background-color: $accent-o-h
-  header, footer
+  header
     border-color: $accent-o
 body.b
   .color
@@ -327,7 +326,7 @@ body.b
     background-color: $accent-b
   .btt:hover, .btt:active
     background-color: $accent-b-h
-  header, footer
+  header
     border-color: $accent-b
 body.r
   .color
@@ -346,5 +345,15 @@ body.r
     background-color: $accent-r
   .btt:hover, .btt:active
     background-color: $accent-r-h
-  header, footer
+  header
     border-color: $accent-r
+
+// Imprint & Privacy
+
+body.imprint, body.privacy
+  overflow: scroll
+  header, footer
+    position: fixed
+  .imprint, .privacy
+    padding: 6em 0
+    text-align: left

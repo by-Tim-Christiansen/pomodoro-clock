@@ -265,7 +265,6 @@ body .settingspage {
       color: #D8D8D8; }
 
 body footer {
-  border-top: 1.5px solid #E74C3C;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -314,7 +313,7 @@ body.g .btt {
 body.g .btt:hover, body.g .btt:active {
   background-color: #28a85f; }
 
-body.g header, body.g footer {
+body.g header {
   border-color: #2ECC71; }
 
 body.o .color {
@@ -340,7 +339,7 @@ body.o .btt {
 body.o .btt:hover, body.o .btt:active {
   background-color: #cc701f; }
 
-body.o header, body.o footer {
+body.o header {
   border-color: #E67E22; }
 
 body.b .color {
@@ -366,7 +365,7 @@ body.b .btt {
 body.b .btt:hover, body.b .btt:active {
   background-color: #2c7eb5; }
 
-body.b header, body.b footer {
+body.b header {
   border-color: #3498DB; }
 
 body.r .color {
@@ -392,5 +391,13 @@ body.r .btt {
 body.r .btt:hover, body.r .btt:active {
   background-color: #c24032; }
 
-body.r header, body.r footer {
+body.r header {
   border-color: #E74C3C; }
+
+body.imprint, body.privacy {
+  overflow: scroll; }
+  body.imprint header, body.imprint footer, body.privacy header, body.privacy footer {
+    position: fixed; }
+  body.imprint .imprint, body.imprint .privacy, body.privacy .imprint, body.privacy .privacy {
+    padding: 6em 0;
+    text-align: left; }
