@@ -145,6 +145,7 @@ $(document).ready(function(){
   // RESET TIMER
   $(".reset").click(function() {
 
+    if (pomoTimer.getStatus() !== 'initialized') {
     c.circleProgress({
       animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds * 1000)),
       value: 1,
@@ -161,7 +162,7 @@ $(document).ready(function(){
     else {
       $(".timeDigital").text(breakLength + ":00");
     }
-
+  }
   });
 
   // switch between play and pause button on click
