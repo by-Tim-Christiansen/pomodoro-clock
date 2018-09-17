@@ -1,3 +1,9 @@
+/*
+ * =================================
+ * Copyright (c) 2018 Hauke Grothues
+ * =================================
+ */
+
 //animate timer circle when page loads
 var c = $('#circle'); // declare variable to skim on typing
 c.circleProgress({
@@ -31,6 +37,12 @@ $(document).ready(function(){
 
   // interacting with timer
   $(".play-pause").click(function() {
+    if (pomoTimer.getStatus() == 'initialized' ||pomoTimer.getStatus() == 'stopped') {
+      $(".play-pause").css("pointer-events", "none");
+      setTimeout(function() {
+        $(".play-pause").css("pointer-events", "auto");
+      }, 1000);
+    }
     runTimer(sessionLength);
   });
 
@@ -139,6 +151,7 @@ $(document).ready(function(){
   // RESET TIMER
   $(".reset").click(function() {
 
+    if (pomoTimer.getStatus() !== 'initialized') {
     c.circleProgress({
       animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds * 1000)),
       value: 1,
@@ -155,7 +168,7 @@ $(document).ready(function(){
     else {
       $(".timeDigital").text(breakLength + ":00");
     }
-
+  }
   });
 
   // switch between play and pause button on click
