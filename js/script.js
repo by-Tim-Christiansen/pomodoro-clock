@@ -16,6 +16,14 @@ c.circleProgress({
 // main function
 $(document).ready(function(){
 
+  var options = {
+    max_value: 5,
+    step_size: 1,
+  };
+
+
+  $(".rating").rate(options);
+
   if (Push.Permission.has() !== true) {
     Push.Permission.request();
   }
