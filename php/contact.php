@@ -6,8 +6,9 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-$email = $_POST['email'];
 $message = $_POST['message'];
+$rating = $_POST["stars"];
+
 
 $mail = new PHPMailer(true);
 $mail->CharSet = 'UTF-8';
@@ -29,7 +30,7 @@ try {
     //Content
     $mail->isHTML(true);
     $mail->Subject = "[Pomodoro Timer]";
-    $mail->Body    = $message;
+    $mail->Body    = $message . " <br> " . $rating;
     $mail->AltBody = strip_tags($message);
 
     $mail->send();
