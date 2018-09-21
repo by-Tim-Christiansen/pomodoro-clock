@@ -133,7 +133,8 @@ body
     flex-direction: column
     z-index: 0
     .container
-      transform: scale(1.25) translateY(-4.5em)
+      margin: 0
+      transform: scale(1.25)
       .row.pop-up
         background-color: #FFFFFF
         position: relative
@@ -149,12 +150,6 @@ body
           margin-right: 1em
         .btt:last-of-type
           margin-left: 1em
-        @media only screen and (max-width: 850px)
-          h2
-            margin: 0 1em 0.75em 1em
-          .btt
-            margin: 0.5em 1em 0.5em 1em
-            display: block
       .row.main
         margin: 0 auto -5.5em auto
         .play-pause
@@ -187,6 +182,7 @@ body
     visibility: visible
     opacity: 1
     transition: visibility 0s, opacity 0.25s ease-in
+    transition: background-color 250ms ease-in
     z-index: 1
     display: flex
     align-items: center
@@ -256,13 +252,12 @@ body
     .cookie-btn
       display: block
       max-width: 5em
-
   footer
     position: absolute
     bottom: 0
     width: 100%
     height: 3em
-    z-index: 2
+    z-index: 0
     background-color: $background
     .row
       .version-link
@@ -280,7 +275,6 @@ body
     transition: visibility 0.25s, opacity 0.25s ease-out
     visibility: hidden
     opacity: 0
-
 // Color Classes
 body.g
   .color
