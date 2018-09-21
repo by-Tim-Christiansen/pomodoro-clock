@@ -225,6 +225,16 @@ body .settingspage {
     body .settingspage .row.made a:hover, body .settingspage .row.made a:active {
       color: #D8D8D8; }
 
+body .popup-overlay {
+  z-index: 4;
+  bottom: 0;
+  position: absolute;
+  background-color: #F8F8F8;
+  padding: 1em; }
+  body .popup-overlay .cookie-btn {
+    display: block;
+    max-width: 5em; }
+
 body footer {
   position: absolute;
   bottom: 0;

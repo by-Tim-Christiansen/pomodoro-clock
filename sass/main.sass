@@ -82,6 +82,7 @@ body
   svg
     cursor: pointer
     transition: all 500ms
+
 // Custom Style:
 body
   // Main Page
@@ -245,6 +246,16 @@ body
         color: $white
       & a:hover, & a:active
         color: $light-grey
+  .popup-overlay
+    z-index: 4
+    bottom: 0
+    position: absolute
+    background-color: $background
+    padding: 1em
+    .cookie-btn
+      display: block
+      max-width: 5em
+
   footer
     position: absolute
     bottom: 0
