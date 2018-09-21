@@ -225,9 +225,8 @@ body .popup-overlay {
   z-index: 4;
   bottom: 0;
   position: absolute;
-  background-color: #F8F8F8;
-  padding: 1em;
-  opacity: 0.85; }
+  background-color: rgba(249, 249, 249, 0.75);
+  padding: 1em; }
   body .popup-overlay .cookie-btn {
     display: block;
     max-width: 5em; }
