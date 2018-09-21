@@ -230,7 +230,8 @@ body .popup-overlay {
   bottom: 0;
   position: absolute;
   background-color: #F8F8F8;
-  padding: 1em; }
+  padding: 1em;
+  opacity: 0.85; }
   body .popup-overlay .cookie-btn {
     display: block;
     max-width: 5em; }
