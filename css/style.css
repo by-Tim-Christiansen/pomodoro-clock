@@ -290,6 +290,8 @@ body form {
   body form .rating {
     font-size: 50px;
     color: #FFFB00; }
+  body form #rating-field {
+    display: none; }
   body form .btt {
     border: none;
     padding: 0.1em 2.75em 0.3em 2.75em; }

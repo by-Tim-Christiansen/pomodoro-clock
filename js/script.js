@@ -29,6 +29,9 @@ $(document).ready(function(){
   };
 
   $(".rating").rate(options);
+  $(".rating").on("change", function(){
+    $("#rating-field").attr("value", ($(".rating").rate("getValue")));
+  })
 
   if (Push.Permission.has() !== true) {
     Push.Permission.request();

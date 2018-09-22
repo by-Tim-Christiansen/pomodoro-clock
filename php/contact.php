@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 $message = $_POST['message'];
-$rating = $_POST["stars"];
+$rating = $_POST["star-rating"];
 
 
 $mail = new PHPMailer(true);
