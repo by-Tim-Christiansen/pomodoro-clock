@@ -181,7 +181,7 @@ body
     color: $white
     visibility: visible
     opacity: 1
-    transition: visibility 0s, opacity 0.25s ease-in
+    transition: all ease-in 250ms
     transition: background-color 250ms ease-in
     z-index: 2
     display: flex
@@ -189,6 +189,12 @@ body
     justify-content: center
     flex-direction: column
     .row
+      .description
+        .sub-description
+          font-size: 0.65em
+          letter-spacing: 2px
+          opacity: 0.65
+          text-transform: none
       .set
         display: flex
         align-items: baseline
@@ -296,6 +302,7 @@ body
     padding: 2em
     background-color: $background
     border: 0.5px solid $accent-r
+    transition: all ease-in 250ms
     h4
       margin-bottom: 0
     input, textarea
@@ -308,6 +315,7 @@ body
 
     .rating
       font-size: 50px
+      margin: auto
     #rating-field
       display: none
     .btt
@@ -317,7 +325,6 @@ body
     font-family: 'Indie Flower'
     font-size: 1.5rem
     text-align: left
-    display: none
     div
       position: absolute
       span

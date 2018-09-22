@@ -18,8 +18,8 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'hauke.grothues@gmail.com';
-    $mail->Password = 'Pemonboys98';
+    $mail->Username = 'flellow99@gmail.com';
+    $mail->Password = 'yHRM+f>4CM=D?aw#';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
@@ -30,7 +30,7 @@ try {
     //Content
     $mail->isHTML(true);
     $mail->Subject = "[Pomodoro Timer]";
-    $mail->Body    = $message . " <br> " . $rating;
+    $mail->Body    = "Bewertung: " . $rating . " Sterne" . "<br><br>" . $message;
     $mail->AltBody = strip_tags($message);
 
     $mail->send();
