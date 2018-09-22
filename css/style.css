@@ -287,6 +287,13 @@ body form {
     outline: none !important;
     border: none;
     resize: none; }
+<<<<<<< HEAD
+=======
+  body form .rating {
+    color: #FFFB00; }
+  body form #rating-field {
+    display: none; }
+>>>>>>> bc8e662a26ee0b44f757e303c4527ae15c1a97b3
   body form .btt {
     border: none;
     padding: 0.1em 2.75em 0.3em 2.75em; }
