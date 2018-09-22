@@ -17,10 +17,16 @@ c.circleProgress({
 $(document).ready(function(){
 
   var options = {
+    symbols: {
+            utf8_star: {
+                base: '&#9734;',
+                hover: '&#9733;',
+                selected: '&#9733;',
+            }
+          },
     max_value: 5,
     step_size: 1,
   };
-
 
   $(".rating").rate(options);
 

@@ -287,8 +287,9 @@ body form {
     outline: none !important;
     border: none;
     resize: none; }
-  body form .rating .star {
-    margin: 1em; }
+  body form .rating {
+    font-size: 50px;
+    color: #FFFB00; }
   body form .btt {
     border: none;
     padding: 0.1em 2.75em 0.3em 2.75em; }
