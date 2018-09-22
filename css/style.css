@@ -277,11 +277,18 @@ body form {
   border-radius: 1em;
   padding: 2em;
   background-color: #F8F8F8;
-  border: 1.5px solid #E74C3C; }
+  border: 0.5px solid #E74C3C; }
+  body form h4 {
+    margin-bottom: 0; }
   body form input, body form textarea {
     display: block; }
-  body form textarea {
-    width: 100%; }
+  body form textarea, body form textarea:focus {
+    width: 100%;
+    outline: none !important;
+    border: none;
+    resize: none; }
+  body form .rating .star {
+    margin: 1em; }
   body form .btt {
     border: none;
     padding: 0.1em 2.75em 0.3em 2.75em; }

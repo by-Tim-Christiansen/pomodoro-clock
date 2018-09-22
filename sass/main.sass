@@ -295,11 +295,19 @@ body
     border-radius: 1em
     padding: 2em
     background-color: $background
-    border: 1.5px solid $accent-r
+    border: 0.5px solid $accent-r
+    h4
+      margin-bottom: 0
     input, textarea
       display: block
-    textarea
+    textarea, textarea:focus
       width: 100%
+      outline: none !important
+      border: none
+      resize: none
+    .rating
+      .star
+        margin: 1em
     .btt
       border: none
       padding: 0.1em 2.75em 0.3em 2.75em
