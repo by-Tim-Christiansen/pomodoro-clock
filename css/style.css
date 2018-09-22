@@ -287,11 +287,50 @@ body form {
     outline: none !important;
     border: none;
     resize: none; }
-  body form .rating .star {
-    margin: 1em; }
   body form .btt {
     border: none;
     padding: 0.1em 2.75em 0.3em 2.75em; }
+
+body .info {
+  font-family: 'Indie Flower';
+  font-size: 1.5rem;
+  text-align: left;
+  display: none; }
+  body .info div {
+    position: absolute; }
+    body .info div span {
+      max-width: 25vh;
+      display: inline-block; }
+    body .info div svg {
+      position: relative;
+      overflow: visible; }
+  body .info .general {
+    top: 10vh;
+    width: 30%; }
+  body .info .reset-button {
+    top: 52vh;
+    left: 2em; }
+    body .info .reset-button svg {
+      transform: scaleX(-1) translateX(6vh) translateY(3em); }
+  body .info .progress {
+    top: 60vh;
+    right: 0em;
+    text-align: right; }
+    body .info .progress svg {
+      transform: scaleX(1) translateX(-24vh) translateY(4em); }
+  body .info .timer {
+    top: 28vh;
+    right: 0em;
+    width: 45%;
+    text-align: right; }
+    body .info .timer svg {
+      transform: scaleX(1) translateX(-24vh) translateY(3em); }
+  body .info .settings {
+    top: 15vh;
+    right: 0em;
+    width: 35%; }
+    body .info .settings svg {
+      transform: rotate(90deg) scaleY(-1) translateX(-6vh) translateY(-1em); }
 
 body.g .color {
   color: #2ECC71;

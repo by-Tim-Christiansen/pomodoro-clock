@@ -305,13 +305,50 @@ body
       outline: none !important
       border: none
       resize: none
-    .rating
-      .star
-        margin: 1em
     .btt
       border: none
       padding: 0.1em 2.75em 0.3em 2.75em
-
+  .info
+    font-family: 'Indie Flower'
+    font-size: 1.5rem
+    text-align: left
+    display: none
+    div
+      position: absolute
+      span
+        max-width: 25vh
+        display: inline-block
+      svg
+        position: relative
+        overflow: visible
+    .general
+      top: 10vh
+      width: 30%
+    .reset-button
+      top: 52vh
+      left: 2em
+      svg
+        transform: scaleX(-1) translateX(6vh) translateY(3em)
+    .progress
+      top: 60vh
+      right: 0em
+      text-align: right
+      svg
+        transform: scaleX(1) translateX(-24vh) translateY(4em)
+    .timer
+      top: 28vh
+      right: 0em
+      width: 45%
+      text-align: right
+      svg
+        transform: scaleX(1) translateX(-24vh) translateY(3em)
+    .settings
+      top: 15vh
+      right: 0em
+      width: 35%
+      svg
+        transform: rotate(90deg) scaleY(-1) translateX(-6vh) translateY(-1em)
+  // Responive Fixes for Information
 // Color Classes
 body.g
   .color
