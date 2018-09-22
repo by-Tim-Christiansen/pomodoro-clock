@@ -274,7 +274,7 @@ body form {
   bottom: 1.35em;
   right: 10em;
   z-index: 1;
-  border-radius: 1em;
+  border-radius: 2.5em;
   padding: 2em;
   background-color: #F8F8F8;
   border: 0.5px solid #E74C3C; }
@@ -288,8 +288,7 @@ body form {
     border: none;
     resize: none; }
   body form .rating {
-    font-size: 50px;
-    color: #FFFB00; }
+    font-size: 50px; }
   body form #rating-field {
     display: none; }
   body form .btt {
@@ -337,6 +336,9 @@ body .info {
     body .info .settings svg {
       transform: rotate(90deg) scaleY(-1) translateX(-6vh) translateY(-1em); }
 
+body.g form {
+  border-color: #2ECC71; }
+
 body.g .color {
   color: #2ECC71;
   fill: #2ECC71; }
@@ -362,6 +364,9 @@ body.g .btt:hover, body.g .btt:active {
 
 body.g header {
   border-color: #2ECC71; }
+
+body.o form {
+  border-color: #E67E22; }
 
 body.o .color {
   color: #E67E22;
@@ -389,6 +394,9 @@ body.o .btt:hover, body.o .btt:active {
 body.o header {
   border-color: #E67E22; }
 
+body.b form {
+  border-color: #3498DB; }
+
 body.b .color {
   color: #3498DB;
   fill: #3498DB; }
@@ -414,6 +422,9 @@ body.b .btt:hover, body.b .btt:active {
 
 body.b header {
   border-color: #3498DB; }
+
+body.r form {
+  border-color: #E74C3C; }
 
 body.r .color {
   color: #E74C3C;
