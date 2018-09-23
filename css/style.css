@@ -240,11 +240,19 @@ body footer {
     flex-flow: row wrap;
     align-items: baseline; }
     body footer .container .version-link, body footer .container .made, body footer .container .imprint-link {
-      flex-grow: 1;
+      flex: 1 auto;
       line-height: 2.5em; }
-    body footer .container .made .coffee, body footer .container .made .heart {
-      overflow: hidden;
-      transform: translateY(0.5em); }
+    body footer .container .made {
+      flex: 2 0px;
+      align-content: center;
+      text-align: right; }
+      body footer .container .made .coffee, body footer .container .made .heart {
+        overflow: hidden;
+        transform: translateY(0.5em); }
+    body footer .container .imprint-link {
+      text-align: right; }
+    body footer .container .version-link {
+      text-align: left; }
 
 body .hide {
   transition: visibility 0.25s, opacity 0.25s ease-out;
@@ -302,6 +310,8 @@ body #feedback-form {
   body #feedback-form .btt {
     border: none;
     padding: 0.1em 2.75em 0.3em 2.75em; }
+  body #feedback-form .form-thankyou {
+    transition: all ease-in 250ms; }
 
 body .info {
   font-family: 'Indie Flower';
