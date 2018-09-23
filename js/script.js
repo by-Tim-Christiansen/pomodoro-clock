@@ -1,6 +1,8 @@
 /*
  * =================================
+ * =================================
  * Copyright (c) 2018 Hauke Grothues
+ * =================================
  * =================================
  */
 
@@ -11,11 +13,27 @@ c.circleProgress({
   value: 1,
   size: 160,
   fill: {color: "#E74C3C"},
-  animation: { duration: 1000, easing: "circleProgressEasing"}
+  animation: { duration: 1000, easing: "circleProgressEasing" }
 });
 // main function
 $(document).ready(function(){
 
+  // declare variables for timer
+  var sessionLength = 25, breakLength = 5, longBreakLength = 15;
+  var pomoTimer = new Timer();
+  var totalSessions = 0;
+  var currentColor = "#E74C3C";
+  var isSession = true;
+  var timeInSeconds;
+  var notifTitle = "";
+  var notifBody = "";
+
+  // ask for permission to send notifications
+  if (Push.Permission.has() !== true) {
+    Push.Permission.request();
+  }
+
+  // setup star-rating in feedback-form
   var options = {
     symbols: {
             utf8_star: {
@@ -27,24 +45,10 @@ $(document).ready(function(){
     max_value: 5,
     step_size: 1,
   };
-
   $(".rating").rate(options);
   $(".rating").on("change", function(){
     $("#rating-field").attr("value", ($(".rating").rate("getValue")));
-  })
-
-  if (Push.Permission.has() !== true) {
-    Push.Permission.request();
-  }
-  // declare variables for timer
-  var sessionLength = 25, breakLength = 5, longBreakLength = 15;
-  var pomoTimer = new Timer();
-  var totalSessions = 0;
-  var currentColor = "#E74C3C";
-  var isSession = true;
-  var timeInSeconds;
-  var notifTitle = "";
-  var notifBody = "";
+  });
 
   // function to play notification sound
   function play() {
@@ -52,9 +56,14 @@ $(document).ready(function(){
     audio.play();
   }
 
+  // open/close feedback-form
+  $(".feedback-btt").click(function(){
+    $("#feedback-form").toggleClass("hide");
+  });
+
   // interacting with timer
   $(".play-pause").click(function() {
-    if (pomoTimer.getStatus() == 'initialized' ||pomoTimer.getStatus() == 'stopped') {
+    if (pomoTimer.getStatus() == 'initialized' || pomoTimer.getStatus() == 'stopped') {
       $(".play-pause").css("pointer-events", "none");
       setTimeout(function() {
         $(".play-pause").css("pointer-events", "auto");
@@ -145,7 +154,7 @@ $(document).ready(function(){
             }
         });
         play();
-      })}, 1000);
+      }); }, 1000);
     }
 
     // PAUSE TIMER
@@ -327,14 +336,11 @@ $(document).ready(function(){
 
   // toggle between timer and settings page
   $('.options').click(function() {
+      $(".settingspage").toggleClass("hide");
+  });
 
-    if ( $('.settingspage').hasClass("hide") ){
-      $('.settingspage').removeClass('hide');
-    }
-    else {
-      $('.settingspage').addClass('hide');
-    }
-
+  $(".info-btt").click(function() {
+    $(".info").toggleClass("hide");
   });
 
 });
