@@ -282,17 +282,16 @@ body
     bottom: 2em
     right: 2em
     z-index: 1
-  form
+  #feedback-form
     font-size: 1rem
     position: fixed
-    display: none //change with JS
-    bottom: 1.35em
-    right: 10em
+    bottom: 1.25em
+    right: 12em
     z-index: 1
-    border-radius: 2.5em
+    border-radius: 1.5em
     padding: 2em
     background-color: $background
-    border: 0.5px solid $accent-r
+    border: 0.5px solid
     transition: all ease-in 250ms
     h4
       margin-bottom: 0
@@ -303,7 +302,17 @@ body
       outline: none !important
       border: none
       resize: none
-
+    &:after
+      content: ""
+      position: absolute
+      top: 85%
+      right: -30px
+      border-color: inherit
+      border-top: 20px solid
+      border-top-color: inherit
+      border-left: 20px solid transparent
+      border-right: 20px solid transparent
+      transform: rotate(-90deg)
     .rating
       font-size: 50px
       margin: auto
@@ -354,8 +363,6 @@ body
   // Responive Fixes for Information
 // Color Classes
 body.g
-  form
-    border-color: $accent-g
   .color
     color: $accent-g
     fill: $accent-g
@@ -375,8 +382,6 @@ body.g
   header
     border-color: $accent-g
 body.o
-  form
-    border-color: $accent-o
   .color
     color: $accent-o
     fill: $accent-o
@@ -396,8 +401,6 @@ body.o
   header
     border-color: $accent-o
 body.b
-  form
-    border-color: $accent-b
   .color
     color: $accent-b
     fill: $accent-b
@@ -417,8 +420,6 @@ body.b
   header
     border-color: $accent-b
 body.r
-  form
-    border-color: $accent-r
   .color
     color: $accent-r
     fill: $accent-r
