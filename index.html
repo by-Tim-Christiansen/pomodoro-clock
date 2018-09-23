@@ -183,15 +183,24 @@
         </svg>
     </div>
       <form id="feedback-form" class="hide" method="post" action="php/contact.php">
-        <h4>Send us Feedback!</h4>
+        <h4 id="feedback-heading">Send us Feedback!</h4>
         <div class="rating color">
           <div class="rate-base-layer" style="width: 90%; height: 47px; overflow: hidden; position: absolute; top: 0px; display: none; white-space: nowrap;"></div>
           <div class="rate-select-layer" style="width: 90%; height: 47px; overflow: hidden; position: absolute; top: 0px; display: none; white-space: nowrap;"></div>
           <div class="rate-hover-layer" style="width: 90%; height: 47px; overflow: hidden; position: absolute; top: 0px; display: none; white-space: nowrap;"></div>
         </div>
+        <div class="user-input">
         <input id="rating-field" name="star-rating" value=0></input>
         <textarea placeholder="Remember, be nice!" cols="30" rows="5" class="text" type="text" name="message"></textarea>
         <button id="submit-btn" class="btt" type="submit">SUBMIT</button>
+        </div>
+        <div class="form-thankyou hide">
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg id="check-icon" class="color" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="m50 3.75c-25.504 0-46.25 20.746-46.25 46.25s20.746 46.25 46.25 46.25 46.25-20.746 46.25-46.25-20.746-46.25-46.25-46.25zm25.637 36.828-29.539 29.535c-0.89844 0.89844-2.1445 1.4141-3.4141 1.4141v2l-0.042969-2c-1.2891-0.011719-2.5391-0.55078-3.4336-1.4766l-14.902-15.441c-1.8516-1.918-1.7969-4.9805 0.12109-6.8281 0.90625-0.875 2.0977-1.3555 3.3516-1.3555 1.3242 0 2.5586 0.52344 3.4766 1.4766l11.488 11.906 26.062-26.062c0.91016-0.91016 2.125-1.4141 3.4141-1.4141s2.5039 0.50391 3.4141 1.4141c1.8867 1.8828 1.8867 4.9492 0.003907 6.832z"/>
+        </svg>
+        <h4>Thank You!</h4>
+      </div>
       </form>
     <div class="popup-overlay">
       Wir verwenden Cookies, um die Zugriffe auf diese Website zu analysieren und dadurch unsere Webinhalte zu optimieren.

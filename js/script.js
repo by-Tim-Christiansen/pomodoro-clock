@@ -339,12 +339,17 @@ $(document).ready(function(){
       $(".settingspage").toggleClass("hide");
   });
 
+  // show hints on button click
   $(".info-btt").click(function() {
     $(".info").toggleClass("hide");
   });
 
+  // show thank you when form submitted
   $('#feedback-form').ajaxForm(function() {
-      $(".form-wrapper").fadeOut("slow");
+      $("#feedback-form h4").fadeOut("slow");
+      $(".rating").fadeOut("slow");
+      $(".user-input").fadeOut("slow");
+      $(".form-thankyou").removeClass("hide");
   });
 
 });
