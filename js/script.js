@@ -343,4 +343,8 @@ $(document).ready(function(){
     $(".info").toggleClass("hide");
   });
 
+  $('#feedback-form').ajaxForm(function() {
+      $(".form-wrapper").fadeOut("slow");
+  });
+
 });

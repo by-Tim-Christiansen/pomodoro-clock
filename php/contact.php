@@ -14,7 +14,7 @@ $mail = new PHPMailer(true);
 $mail->CharSet = 'UTF-8';
 try {
 
-    $mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 0;
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
