@@ -13,7 +13,9 @@ $white: #FFFFFF
 $light-grey: #D8D8D8
 
 // Breakpoints
-$b-footer-m: 820px
+$break-m: 820px
+$break-sm: 550px
+$break-s: 425px
 //General Styles
 body
   text-align: center
@@ -93,6 +95,8 @@ body
         display: inline-block
         float: left
         cursor: pointer
+        @media screen and (max-width: $break-sm)
+          display: none
         .hollow
           opacity: 1
         .fill
@@ -106,6 +110,8 @@ body
             transition: all 500ms
       h1
         display: inline-block
+        @media screen and (max-width: $break-sm)
+          font-size: 1.5em
         svg
           fill: $accent-r
           margin: 0 5px 0 5px
@@ -129,6 +135,8 @@ body
     .container
       margin: 0
       transform: scale(1.25)
+      @media screen and (max-width: $break-sm)
+        transform: scale(1)
       .row.pop-up
         background-color: #FFFFFF
         position: relative
@@ -138,6 +146,8 @@ body
         box-shadow: 10px 10px 36px -14px rgba(74,74,74,1)
         margin-bottom: -19em
         display: block
+        @media screen and (max-width: $break-sm)
+          font-size: 0.75em
         h2
           font-size: 3em
         .btt:first-of-type
@@ -182,6 +192,7 @@ body
     align-items: center
     justify-content: center
     flex-direction: column
+    max-height: auto
     .row
       .description
         .sub-description
@@ -279,13 +290,12 @@ body
         text-align: right
       .version-link
         text-align: left
-      @media screen and (max-width: $b-footer-m)
+      @media screen and (max-width: $break-m)
         display: block
         .version-link, .made, .imprint-link
           width: 100% !important
           text-align: center
           transform: none
-
   .hide
     transition: visibility 0.25s, opacity 0.25s ease-out
     visibility: hidden
@@ -301,6 +311,8 @@ body
     bottom: 2em
     right: 2em
     z-index: 1
+    @media screen and (max-width: $break-sm)
+      display: none
   .feedback-div
     font-size: 1rem
     position: fixed
@@ -312,6 +324,7 @@ body
     background-color: $background
     border: 3px solid
     transition: all ease-in 250ms
+    max-height: auto
     &:after
       content: ""
       position: absolute
@@ -351,6 +364,8 @@ body
     font-family: 'Indie Flower'
     font-size: 1.5rem
     text-align: left
+    @media screen and (max-width: $break-sm)
+      display: none
     div
       position: absolute
       span
@@ -474,3 +489,12 @@ body.imprint, body.privacy
   .imprint, .privacy
     padding: 6em 0
     text-align: left
+
+// Mobile Styling
+@media screen and (max-width: $break-s)
+  body
+    header, .landing, footer, .feedback-btt, .feedback-div
+      position: static
+    .settingspage, .feedback-btt, .feedback-div, .options
+      display: none
+      opacity: 0

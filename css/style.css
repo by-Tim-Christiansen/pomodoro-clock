@@ -71,6 +71,9 @@ body header {
       display: inline-block;
       float: left;
       cursor: pointer; }
+      @media screen and (max-width: 550px) {
+        body header .container .info-btt {
+          display: none; } }
       body header .container .info-btt .hollow {
         opacity: 1; }
       body header .container .info-btt .fill {
@@ -83,6 +86,9 @@ body header {
         transition: all 500ms; }
     body header .container h1 {
       display: inline-block; }
+      @media screen and (max-width: 550px) {
+        body header .container h1 {
+          font-size: 1.5em; } }
       body header .container h1 svg {
         fill: #E74C3C;
         margin: 0 5px 0 5px;
@@ -107,6 +113,9 @@ body .landing {
   body .landing .container {
     margin: 0;
     transform: scale(1.25); }
+    @media screen and (max-width: 550px) {
+      body .landing .container {
+        transform: scale(1); } }
     body .landing .container .row.pop-up {
       background-color: #FFFFFF;
       position: relative;
@@ -116,6 +125,9 @@ body .landing {
       box-shadow: 10px 10px 36px -14px #4a4a4a;
       margin-bottom: -19em;
       display: block; }
+      @media screen and (max-width: 550px) {
+        body .landing .container .row.pop-up {
+          font-size: 0.75em; } }
       body .landing .container .row.pop-up h2 {
         font-size: 3em; }
       body .landing .container .row.pop-up .btt:first-of-type {
@@ -158,7 +170,8 @@ body .settingspage {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  max-height: auto; }
   body .settingspage .row .description .sub-description {
     font-size: 0.65em;
     letter-spacing: 2px;
@@ -280,6 +293,9 @@ body .feedback-btt {
   bottom: 2em;
   right: 2em;
   z-index: 1; }
+  @media screen and (max-width: 550px) {
+    body .feedback-btt {
+      display: none; } }
 
 body .feedback-div {
   font-size: 1rem;
@@ -291,7 +307,8 @@ body .feedback-div {
   padding: 2em;
   background-color: #F8F8F8;
   border: 3px solid;
-  transition: all ease-in 250ms; }
+  transition: all ease-in 250ms;
+  max-height: auto; }
   body .feedback-div:after {
     content: "";
     position: absolute;
@@ -331,6 +348,9 @@ body .info {
   font-family: 'Indie Flower';
   font-size: 1.5rem;
   text-align: left; }
+  @media screen and (max-width: 550px) {
+    body .info {
+      display: none; } }
   body .info div {
     position: absolute; }
     body .info div span {
@@ -478,3 +498,10 @@ body.imprint, body.privacy {
   body.imprint .imprint, body.imprint .privacy, body.privacy .imprint, body.privacy .privacy {
     padding: 6em 0;
     text-align: left; }
+
+@media screen and (max-width: 425px) {
+  body header, body .landing, body footer, body .feedback-btt, body .feedback-div {
+    position: static; }
+  body .settingspage, body .feedback-btt, body .feedback-div, body .options {
+    display: none;
+    opacity: 0; } }
