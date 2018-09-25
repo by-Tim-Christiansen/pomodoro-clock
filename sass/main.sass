@@ -243,9 +243,13 @@ body
   .popup-overlay
     z-index: 4
     bottom: 0
-    position: absolute
+    position: fixed
     background-color: rgba(#f9f9f9, 0.75)
     padding: 1em
+    display: block
+    width: 100%
+    overflow: hidden
+    margin-left: -1em
     .cookie-btn
       display: block
       max-width: 5em
@@ -261,12 +265,11 @@ body
       flex-flow: row wrap
       align-items: baseline
       .version-link, .made, .imprint-link
-        flex: 1 auto
         line-height: 2.5em
+        width: 25%
       .made
-        flex: 2 0px
+        width: 50%
         align-content: center
-        text-align: right
         .coffee, .heart
           overflow: hidden
           transform: translateY(0.5em)
@@ -289,10 +292,10 @@ body
     bottom: 2em
     right: 2em
     z-index: 1
-  #feedback-form
+  .feedback-div
     font-size: 1rem
     position: fixed
-    bottom: 1.25em
+    bottom: 3.5em
     right: 12em
     z-index: 1
     border-radius: 1.5em
@@ -300,19 +303,10 @@ body
     background-color: $background
     border: 3px solid
     transition: all ease-in 250ms
-    h4
-      margin-bottom: 0
-    input, textarea
-      display: block
-    textarea, textarea:focus
-      width: 100%
-      outline: none !important
-      border: none
-      resize: none
     &:after
       content: ""
       position: absolute
-      top: 85%
+      bottom: 2em
       right: -30px
       border-color: inherit
       border-top: 20px solid
@@ -320,17 +314,30 @@ body
       border-left: 20px solid transparent
       border-right: 20px solid transparent
       transform: scale(0.9) rotate(-90deg)
-    .rating
-      font-size: 50px
-      margin: auto
-    #rating-field
-      display: none
-    .btt
-      border: none
-      padding: 0.1em 2.75em 0.3em 2.75em
-    .form-thankyou
-      transition: all ease-in 250ms
+    .feedback
+      max-height: 5em
+      h4
+        margin-bottom: 0
+      input, textarea
+        display: block
+      textarea, textarea:focus
+        width: 100%
+        outline: none !important
+        border: none
+        resize: none
 
+      .rating
+        font-size: 50px
+        margin: auto
+      #rating-field
+        display: none
+      .btt
+        border: none
+        padding: 0.1em 2.75em 0.3em 2.75em
+    .form-thankyou
+      transition: visibility 0.25s, opacity 0.25s ease-in
+      height: auto
+      max-height: 17em
   .info
     font-family: 'Indie Flower'
     font-size: 1.5rem

@@ -221,9 +221,13 @@ body .settingspage {
 body .popup-overlay {
   z-index: 4;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   background-color: rgba(249, 249, 249, 0.75);
-  padding: 1em; }
+  padding: 1em;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin-left: -1em; }
   body .popup-overlay .cookie-btn {
     display: block;
     max-width: 5em; }
@@ -240,12 +244,11 @@ body footer {
     flex-flow: row wrap;
     align-items: baseline; }
     body footer .container .version-link, body footer .container .made, body footer .container .imprint-link {
-      flex: 1 auto;
-      line-height: 2.5em; }
+      line-height: 2.5em;
+      width: 25%; }
     body footer .container .made {
-      flex: 2 0px;
-      align-content: center;
-      text-align: right; }
+      width: 50%;
+      align-content: center; }
       body footer .container .made .coffee, body footer .container .made .heart {
         overflow: hidden;
         transform: translateY(0.5em); }
@@ -271,10 +274,10 @@ body .feedback-btt {
   right: 2em;
   z-index: 1; }
 
-body #feedback-form {
+body .feedback-div {
   font-size: 1rem;
   position: fixed;
-  bottom: 1.25em;
+  bottom: 3.5em;
   right: 12em;
   z-index: 1;
   border-radius: 1.5em;
@@ -282,19 +285,10 @@ body #feedback-form {
   background-color: #F8F8F8;
   border: 3px solid;
   transition: all ease-in 250ms; }
-  body #feedback-form h4 {
-    margin-bottom: 0; }
-  body #feedback-form input, body #feedback-form textarea {
-    display: block; }
-  body #feedback-form textarea, body #feedback-form textarea:focus {
-    width: 100%;
-    outline: none !important;
-    border: none;
-    resize: none; }
-  body #feedback-form:after {
+  body .feedback-div:after {
     content: "";
     position: absolute;
-    top: 85%;
+    bottom: 2em;
     right: -30px;
     border-color: inherit;
     border-top: 20px solid;
@@ -302,16 +296,29 @@ body #feedback-form {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     transform: scale(0.9) rotate(-90deg); }
-  body #feedback-form .rating {
-    font-size: 50px;
-    margin: auto; }
-  body #feedback-form #rating-field {
-    display: none; }
-  body #feedback-form .btt {
-    border: none;
-    padding: 0.1em 2.75em 0.3em 2.75em; }
-  body #feedback-form .form-thankyou {
-    transition: all ease-in 250ms; }
+  body .feedback-div .feedback {
+    max-height: 5em; }
+    body .feedback-div .feedback h4 {
+      margin-bottom: 0; }
+    body .feedback-div .feedback input, body .feedback-div .feedback textarea {
+      display: block; }
+    body .feedback-div .feedback textarea, body .feedback-div .feedback textarea:focus {
+      width: 100%;
+      outline: none !important;
+      border: none;
+      resize: none; }
+    body .feedback-div .feedback .rating {
+      font-size: 50px;
+      margin: auto; }
+    body .feedback-div .feedback #rating-field {
+      display: none; }
+    body .feedback-div .feedback .btt {
+      border: none;
+      padding: 0.1em 2.75em 0.3em 2.75em; }
+  body .feedback-div .form-thankyou {
+    transition: visibility 0.25s, opacity 0.25s ease-in;
+    height: auto;
+    max-height: 17em; }
 
 body .info {
   font-family: 'Indie Flower';

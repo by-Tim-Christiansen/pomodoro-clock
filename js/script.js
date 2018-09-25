@@ -58,7 +58,7 @@ $(document).ready(function(){
 
   // open/close feedback-form
   $(".feedback-btt").click(function(){
-    $("#feedback-form").toggleClass("hide");
+    $(".feedback-div").toggleClass("hide");
   });
 
   // interacting with timer
@@ -341,15 +341,16 @@ $(document).ready(function(){
 
   // show hints on button click
   $(".info-btt").click(function() {
+    $(".info-btt").toggleClass("active");
     $(".info").toggleClass("hide");
   });
 
   // show thank you when form submitted
   $('#feedback-form').ajaxForm(function() {
-      $("#feedback-form h4").fadeOut("slow");
-      $(".rating").fadeOut("slow");
-      $(".user-input").fadeOut("slow");
-      $(".form-thankyou").removeClass("hide");
+      $(".feedback").fadeOut(100);
+      //$(".rating").fadeOut("slow");
+      //$(".user-input").fadeOut("slow");
+      $(".form-thankyou").delay(5000).removeClass("hide");
   });
 
 });
