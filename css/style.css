@@ -256,6 +256,13 @@ body footer {
       text-align: right; }
     body footer .container .version-link {
       text-align: left; }
+    @media screen and (max-width: 820px) {
+      body footer .container {
+        display: block; }
+        body footer .container .version-link, body footer .container .made, body footer .container .imprint-link {
+          width: 100% !important;
+          text-align: center;
+          transform: none; } }
 
 body .hide {
   transition: visibility 0.25s, opacity 0.25s ease-out;
