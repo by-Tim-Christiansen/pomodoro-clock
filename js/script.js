@@ -346,11 +346,14 @@ $(document).ready(function(){
   });
 
   // show thank you when form submitted
-  $('#feedback-form').ajaxForm(function() {
-      $(".feedback").fadeOut(100);
-      //$(".rating").fadeOut("slow");
-      //$(".user-input").fadeOut("slow");
-      $(".form-thankyou").delay(5000).removeClass("hide");
-  });
+
+      $('#feedback-form').ajaxForm( function() {
+          $(".feedback").fadeOut(100);
+          //$(".rating").fadeOut("slow");
+          //$(".user-input").fadeOut("slow");
+          $(".form-thankyou").delay(5000).removeClass("hide");
+      });
+
+
 
 });
