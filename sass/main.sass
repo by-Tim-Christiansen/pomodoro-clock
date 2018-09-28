@@ -13,6 +13,8 @@ $white: #FFFFFF
 $light-grey: #D8D8D8
 
 // Breakpoints
+$break-lg: 1440px
+$break-l: 1024px
 $break-m: 820px
 $break-sm: 550px
 $break-s: 425px
@@ -347,7 +349,6 @@ body
         outline: none !important
         border: none
         resize: none
-
       .rating
         font-size: 50px
         margin: auto
@@ -368,39 +369,50 @@ body
       display: none
     div
       position: absolute
+      max-width: 25em
+      width: auto
+      font-size: 1.1em
+      @media screen and (max-width: $break-lg)
+        font-size: 1
+      @media screen and (max-width: $break-l)
+        font-size: 0.9em
+      @media screen and (max-width: $break-m)
+        font-size: 0.75em
+        max-width: 20em
       span
-        max-width: 25vh
         display: inline-block
       svg
         position: relative
         overflow: visible
     .general
       top: 10vh
-      width: 30%
     .reset-button
       top: 52vh
-      left: 2em
       svg
-        transform: scaleX(-1) translateX(6em) translateY(3em)
+        transform: scaleX(-1)
+        display: block
     .progress
-      top: 60vh
-      right: 0em
-      text-align: right
       svg
-        transform: scaleX(1) translateX(-24em) translateY(2em)
+        transform: scaleY(-1)
+        display: block
+      top: 80vh
+      text-align: right
+      right: 0
     .timer
       top: 28vh
       right: 0em
-      width: 45%
       text-align: right
       svg
-        transform: scaleX(1) translateX(-24em) translateY(3em)
+        transform: scaleX(1)
+        display: block
     .settings
-      top: 15vh
-      right: 0em
-      width: 35%
+      top: 10vh
+      right: 0
       svg
-        transform: rotate(90deg) scaleY(-1) translateX(-6em) translateY(-1em)
+        transform: rotate(90deg) scaleY(-1)
+        right: 1em
+        bottom: 1em
+        float: right
   // Responive Fixes for Information
 // Color Classes
 body.g
