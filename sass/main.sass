@@ -12,6 +12,12 @@ $black: rgb(74, 74, 74)
 $white: #FFFFFF
 $light-grey: #D8D8D8
 
+// Breakpoints
+$break-lg: 1440px
+$break-l: 1024px
+$break-m: 820px
+$break-sm: 550px
+$break-s: 425px
 //General Styles
 body
   text-align: center
@@ -71,24 +77,17 @@ body
     font-weight: 300
     letter-spacing: 2px
     margin-bottom: 1rem
-  .made
-    font-size: 1em
-    display: block
-    color: $black
-    margin-top: 1em
-    .heart, .coffee
-      vertical-align: text-top
-      cursor: default
   svg
     cursor: pointer
     transition: all 500ms
+
 // Custom Style:
 body
   // Main Page
   header
     border-bottom: 1.5px solid $accent-r
     background-color: $background
-    z-index: 2
+    z-index: 3
     position: absolute
     width: 100%
     .container
@@ -98,6 +97,8 @@ body
         display: inline-block
         float: left
         cursor: pointer
+        @media screen and (max-width: $break-sm)
+          display: none
         .hollow
           opacity: 1
         .fill
@@ -111,6 +112,8 @@ body
             transition: all 500ms
       h1
         display: inline-block
+        @media screen and (max-width: $break-sm)
+          font-size: 1.5em
         svg
           fill: $accent-r
           margin: 0 5px 0 5px
@@ -132,7 +135,10 @@ body
     flex-direction: column
     z-index: 0
     .container
-      transform: scale(1.25) translateY(-4.5em)
+      margin: 0
+      transform: scale(1.25)
+      @media screen and (max-width: $break-sm)
+        transform: scale(1)
       .row.pop-up
         background-color: #FFFFFF
         position: relative
@@ -142,18 +148,14 @@ body
         box-shadow: 10px 10px 36px -14px rgba(74,74,74,1)
         margin-bottom: -19em
         display: block
+        @media screen and (max-width: $break-sm)
+          font-size: 0.75em
         h2
           font-size: 3em
         .btt:first-of-type
           margin-right: 1em
         .btt:last-of-type
           margin-left: 1em
-        @media only screen and (max-width: 850px)
-          h2
-            margin: 0 1em 0.75em 1em
-          .btt
-            margin: 0.5em 1em 0.5em 1em
-            display: block
       .row.main
         margin: 0 auto -5.5em auto
         .play-pause
@@ -183,15 +185,20 @@ body
     width: 100%
     top: 0
     color: $white
-    visibility: visible
-    opacity: 1
-    transition: visibility 0s, opacity 0.25s ease-in
-    z-index: 1
+    transition: all ease-in 0.25s
+    z-index: 2
     display: flex
     align-items: center
     justify-content: center
     flex-direction: column
+    max-height: auto
     .row
+      .description
+        .sub-description
+          font-size: 0.65em
+          letter-spacing: 2px
+          opacity: 0.65
+          text-transform: none
       .set
         display: flex
         align-items: baseline
@@ -245,31 +252,166 @@ body
         color: $white
       & a:hover, & a:active
         color: $light-grey
+  .popup-overlay
+    z-index: 4
+    bottom: 0
+    position: fixed
+    background-color: rgba(#f9f9f9, 0.75)
+    padding: 1em
+    display: block
+    width: 100%
+    overflow: hidden
+    margin-left: -1em
+    .cookie-btn
+      display: block
+      max-width: 5em
   footer
     position: absolute
     bottom: 0
     width: 100%
-    color: $black
-    z-index: 2
+    z-index: 0
     background-color: $background
-    .version-link
-      margin: .25em auto
-      opacity: 0.7
-      float: left
-    .made
-      margin: .25em auto
-      text-align: center
-    .imprint-link
-      margin: .25em auto
-      float: right
-    .version-link, .made, .imprint-link
-      display: inline-block
-
+    justify-content: space-between
+    .container
+      display: flex
+      flex-flow: row wrap
+      align-items: baseline
+      .version-link, .made, .imprint-link
+        line-height: 2.5em
+        width: 25%
+      .made
+        width: 50%
+        align-content: center
+        .coffee, .heart
+          overflow: hidden
+          transform: translateY(0.5em)
+      .imprint-link
+        text-align: right
+      .version-link
+        text-align: left
+      @media screen and (max-width: $break-m)
+        display: block
+        .version-link, .made, .imprint-link
+          width: 100% !important
+          text-align: center
+          transform: none
   .hide
-    transition: visibility 0.25s, opacity 0.25s ease-out
+    transition: all ease 0.25s
     visibility: hidden
     opacity: 0
-
+  .feedback-btt
+    font-size: 1rem
+    height: 50px
+    border-radius: 50%
+    width: 50px
+    padding: 20px
+    transform: scale(0.7)
+    position: fixed
+    bottom: 2em
+    right: 2em
+    z-index: 1
+    @media screen and (max-width: $break-sm)
+      display: none
+  .feedback-div
+    font-size: 1rem
+    position: fixed
+    bottom: 3.5em
+    right: 12em
+    z-index: 1
+    border-radius: 1.5em
+    padding: 2em
+    background-color: $background
+    border: 3px solid
+    transition: all ease-in 250ms
+    max-height: auto
+    &:after
+      content: ""
+      position: absolute
+      bottom: 2em
+      right: -30px
+      border-color: inherit
+      border-top: 20px solid
+      border-top-color: inherit
+      border-left: 20px solid transparent
+      border-right: 20px solid transparent
+      transform: scale(0.9) rotate(-90deg)
+    .feedback
+      max-height: 5em
+      h4
+        margin-bottom: 0
+      input, textarea
+        display: block
+      textarea, textarea:focus
+        width: 100%
+        outline: none !important
+        border: none
+        resize: none
+      .rating
+        font-size: 50px
+        margin: auto
+      #rating-field
+        display: none
+      .btt
+        border: none
+        padding: 0.1em 2.75em 0.3em 2.75em
+    .form-thankyou
+      transition: visibility 0.25s, opacity 0.25s ease-in
+      height: auto
+      max-height: 17em
+  .info
+    font-family: 'Indie Flower'
+    font-size: 1.5rem
+    text-align: left
+    transition: all ease 0.25s
+    @media screen and (max-width: $break-sm)
+      display: none
+    div
+      position: absolute
+      max-width: 25em
+      width: auto
+      font-size: 1.1em
+      @media screen and (max-width: $break-lg)
+        font-size: 1
+      @media screen and (max-width: $break-l)
+        font-size: 0.9em
+      @media screen and (max-width: $break-m)
+        font-size: 0.75em
+        max-width: 20em
+      span
+        display: inline-block
+      svg
+        position: relative
+        overflow: visible
+    .general
+      top: 10vh
+    .reset-button
+      top: 52vh
+      svg
+        transform: scaleX(-1)
+        display: block
+    .progress
+      svg
+        transform: scaleY(-1)
+        display: block
+      top: 80vh
+      text-align: right
+      right: 0
+    .timer
+      top: 28vh
+      right: 0em
+      text-align: right
+      svg
+        transform: scaleX(1)
+        display: block
+    .settings
+      top: 10vh
+      right: 0
+      svg
+        transform: rotate(90deg) scaleY(-1)
+        right: 1em
+        bottom: 1em
+        float: right
+  // Responive Fixes for Information
 // Color Classes
 body.g
   .color
@@ -357,3 +499,12 @@ body.imprint, body.privacy
   .imprint, .privacy
     padding: 6em 0
     text-align: left
+
+// Mobile Styling
+@media screen and (max-width: $break-s)
+  body
+    header, .landing, footer, .feedback-btt, .feedback-div
+      position: static
+    .settingspage, .feedback-btt, .feedback-div, .options
+      display: none
+      opacity: 0

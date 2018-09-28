@@ -1,16 +1,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Pomodoro Timer</title>
+    <title>Pomodoro Timer - Your Tool for Time Management</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The Pomodoro Technique timer will boost your productivity. Our online app works in browser and can be personalized to fit your needs of time management.">
+    <meta name="keywords" content="pomodoro technique, pomodoro timer, pomodoro method, pomodoro clock, online pomodoro timer, productivity tools, concentration techniques, get things done">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" type="image/png" href="images/timer.png"/>
+    <link rel="shortcut icon" type="image/png" href="timer.png"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120267753-2"></script>
     <script>
@@ -22,12 +25,6 @@
     </script>
   </head>
   <body class="r">
-    <div class="popup-overlay">
-      Wir verwenden Cookies, um die Zugriffe auf diese Website zu analysieren und dadurch unsere Webinhalte zu optimieren.
-      Mit der Nutzung dieser Website stimmen Sie zu, dass wir dazu Informationen zu Ihrer Nutzung an unseren Partner für Analytics weitergeben.
-      Mehr Informationen hierzu gibt es in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
-      <div class="cookie-btn btt">Okay!</div>
-    </div>
     <audio id="audio1" style="display:none;">
     <source src="to-the-point.ogg" type="audio/ogg">
     </audio>
@@ -59,7 +56,7 @@
             <h2 class="pop-up-header">Time for a break!</h2>
             <div class="btt start">Start break</div>
             <div class="alt-opt">or<div class="btt next">Next Work Session</div></div>
-          </div>
+        </div>
 
         <div class="row main">
           <div id="circle">
@@ -99,11 +96,42 @@
 
     </div>
 
+    <div class="info container hide">
+      <div class="general">
+        <h5>What is this all about?</h5>
+        <p>The Pomodoro Technique® is a simple method to increase your productivity. It is all about splitting your work time into smaller sessions with short breaks in between. You usually work for about 25 minutes and take a 5 minute break afterwards. With the Pomodoro Technique® you will be much more focused during your work sessions while still allowing your brain to gain new energy during the breaks.<br>Give it a try!</p>
+      </div>
+      <div class="reset-button">
+        <span>You can reset the current timer here</span>
+        <svg class="color" width="50px" height="50px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+         <path d="m6.1992 79.301c2 1.3984 4.8008 1.6016 7.1992 2 5.3984 0.69922 10.699 1.3008 16.102 1.3984 1.1016 0 2.6016-4.1992 1.8984-4.1992-4.3008-0.39844-8.6992-0.80078-13-1.3008-1.8008-0.19922-3.5-0.39844-5.3008-0.60156 12.898-2.8984 25.5-7.3008 37.199-13.301 6.1992-3.1992 12.301-6.6992 18-10.699 6-4.1016 11.801-8.6016 16.5-14.102 5.1016-5.8984 9.1016-12.898 10.199-20.699 0.19922-1.3984-1.3984 1.1016-1.5 1.6992-2.1953 13.805-14.496 23.004-25.496 30.203-10.801 7.1016-22.602 12.699-34.801 17-6.8008 2.3984-13.898 4.1992-21 5.6992-0.89844 0.19922-1.6016 1.8984-1.8984 2.6992 0 0.10156-0.19922 0.5-0.30078 0.89844-0.19922-0.10156-0.5-0.10156-0.69922-0.19922-0.39844-0.10156-0.89844-0.60156-1.3008-0.60156-0.39844-0.10156-1.6016 1.1016-0.89844 0.30078 2.8984-3.1992 6.3984-5.8984 9.6992-8.6992 3-2.6016 6.1016-5.5 10-6.8984 0.89844-0.30078 1.8984-3.3984 1.3008-3.3008-4.5 1.1992-8.1016 4.8008-11.5 7.6992-2 1.6992-3.8984 3.3984-5.8984 5.1992-1.6992 1.6016-3.6992 3.1016-4.8984 5.1992-0.90625 1.6055-1.3047 3.4062 0.39453 4.6055z"/>
+        </svg>
+      </div>
+      <div class="progress">
+        <svg class="color" width="50px" height="50px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+         <path d="m6.1992 79.301c2 1.3984 4.8008 1.6016 7.1992 2 5.3984 0.69922 10.699 1.3008 16.102 1.3984 1.1016 0 2.6016-4.1992 1.8984-4.1992-4.3008-0.39844-8.6992-0.80078-13-1.3008-1.8008-0.19922-3.5-0.39844-5.3008-0.60156 12.898-2.8984 25.5-7.3008 37.199-13.301 6.1992-3.1992 12.301-6.6992 18-10.699 6-4.1016 11.801-8.6016 16.5-14.102 5.1016-5.8984 9.1016-12.898 10.199-20.699 0.19922-1.3984-1.3984 1.1016-1.5 1.6992-2.1953 13.805-14.496 23.004-25.496 30.203-10.801 7.1016-22.602 12.699-34.801 17-6.8008 2.3984-13.898 4.1992-21 5.6992-0.89844 0.19922-1.6016 1.8984-1.8984 2.6992 0 0.10156-0.19922 0.5-0.30078 0.89844-0.19922-0.10156-0.5-0.10156-0.69922-0.19922-0.39844-0.10156-0.89844-0.60156-1.3008-0.60156-0.39844-0.10156-1.6016 1.1016-0.89844 0.30078 2.8984-3.1992 6.3984-5.8984 9.6992-8.6992 3-2.6016 6.1016-5.5 10-6.8984 0.89844-0.30078 1.8984-3.3984 1.3008-3.3008-4.5 1.1992-8.1016 4.8008-11.5 7.6992-2 1.6992-3.8984 3.3984-5.8984 5.1992-1.6992 1.6016-3.6992 3.1016-4.8984 5.1992-0.90625 1.6055-1.3047 3.4062 0.39453 4.6055z"/>
+        </svg>
+        <span>After every work session a circle gets <br /> coloured to show your progress. <br />Can you make it to eight circles?</span>
+      </div>
+      <div class="timer">
+        <span>This is your timer. Any questions?</span>
+        <svg class="color" width="50px" height="50px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+         <path d="m6.1992 79.301c2 1.3984 4.8008 1.6016 7.1992 2 5.3984 0.69922 10.699 1.3008 16.102 1.3984 1.1016 0 2.6016-4.1992 1.8984-4.1992-4.3008-0.39844-8.6992-0.80078-13-1.3008-1.8008-0.19922-3.5-0.39844-5.3008-0.60156 12.898-2.8984 25.5-7.3008 37.199-13.301 6.1992-3.1992 12.301-6.6992 18-10.699 6-4.1016 11.801-8.6016 16.5-14.102 5.1016-5.8984 9.1016-12.898 10.199-20.699 0.19922-1.3984-1.3984 1.1016-1.5 1.6992-2.1953 13.805-14.496 23.004-25.496 30.203-10.801 7.1016-22.602 12.699-34.801 17-6.8008 2.3984-13.898 4.1992-21 5.6992-0.89844 0.19922-1.6016 1.8984-1.8984 2.6992 0 0.10156-0.19922 0.5-0.30078 0.89844-0.19922-0.10156-0.5-0.10156-0.69922-0.19922-0.39844-0.10156-0.89844-0.60156-1.3008-0.60156-0.39844-0.10156-1.6016 1.1016-0.89844 0.30078 2.8984-3.1992 6.3984-5.8984 9.6992-8.6992 3-2.6016 6.1016-5.5 10-6.8984 0.89844-0.30078 1.8984-3.3984 1.3008-3.3008-4.5 1.1992-8.1016 4.8008-11.5 7.6992-2 1.6992-3.8984 3.3984-5.8984 5.1992-1.6992 1.6016-3.6992 3.1016-4.8984 5.1992-0.90625 1.6055-1.3047 3.4062 0.39453 4.6055z"/>
+        </svg>
+      </div>
+      <div class="settings">
+        <svg class="color" width="50px" height="50px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+         <path d="m6.1992 79.301c2 1.3984 4.8008 1.6016 7.1992 2 5.3984 0.69922 10.699 1.3008 16.102 1.3984 1.1016 0 2.6016-4.1992 1.8984-4.1992-4.3008-0.39844-8.6992-0.80078-13-1.3008-1.8008-0.19922-3.5-0.39844-5.3008-0.60156 12.898-2.8984 25.5-7.3008 37.199-13.301 6.1992-3.1992 12.301-6.6992 18-10.699 6-4.1016 11.801-8.6016 16.5-14.102 5.1016-5.8984 9.1016-12.898 10.199-20.699 0.19922-1.3984-1.3984 1.1016-1.5 1.6992-2.1953 13.805-14.496 23.004-25.496 30.203-10.801 7.1016-22.602 12.699-34.801 17-6.8008 2.3984-13.898 4.1992-21 5.6992-0.89844 0.19922-1.6016 1.8984-1.8984 2.6992 0 0.10156-0.19922 0.5-0.30078 0.89844-0.19922-0.10156-0.5-0.10156-0.69922-0.19922-0.39844-0.10156-0.89844-0.60156-1.3008-0.60156-0.39844-0.10156-1.6016 1.1016-0.89844 0.30078 2.8984-3.1992 6.3984-5.8984 9.6992-8.6992 3-2.6016 6.1016-5.5 10-6.8984 0.89844-0.30078 1.8984-3.3984 1.3008-3.3008-4.5 1.1992-8.1016 4.8008-11.5 7.6992-2 1.6992-3.8984 3.3984-5.8984 5.1992-1.6992 1.6016-3.6992 3.1016-4.8984 5.1992-0.90625 1.6055-1.3047 3.4062 0.39453 4.6055z"/>
+        </svg>
+        <span>Do you want to change the color or adjust the length of your sessions? This button will take you to the settings!</span>
+      </div>
+    </div>
     <div class="settingspage hide">
       <div class="container">
         <div class="row">
           <div class="description">
-            Session Length
+            Session Length<br>
+            <h6 class="sub-description">Adjust the length of your work sessions</h6>
           </div>
           <div class="set">
             <div class="num session-"> - </div>
@@ -113,7 +141,8 @@
         </div>
         <div class="row">
           <div class="description">
-            Break Length <br>
+            Break Length<br>
+            <h6 class="sub-description">You have a break after every work session</h6>
           </div>
           <div class="set">
             <div class="num break-"> - </div>
@@ -123,7 +152,8 @@
         </div>
         <div class="row">
           <div class="description">
-            Long-Break Length
+            Long-Break Length<br>
+            <h6 class="sub-description">Every fourth break will be a long break</h6>
           </div>
           <div class="set">
             <div class="num longbreak-"> - </div>
@@ -147,47 +177,67 @@
       </div>
     </div>
 
+    <div class="feedback-btt btt">
+      <?xml version="1.0" encoding="UTF-8"?>
+        <svg fill="white" width="48px" height="48px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+         <path d="m87 67.398c-1.6992 4.3984-6 7.3008-10.699 7.3008h-31.5l-16.801 16.102c-0.39844 0.39844-0.89844 0.60156-1.5 0.60156-0.30078 0-0.60156-0.10156-0.80078-0.19922-0.80078-0.30078-1.3008-1.1016-1.3008-2v-14.504h-5.3008c-6.3984 0-11.5-5.1992-11.5-11.5l0.003906-34.898c0-6.3984 5.1992-11.5 11.5-11.5h35.102c1.1992 0 2.1016 1 2.1016 2.1016 0 1.1016-1 2.1016-2.1016 2.1016l-35.004-0.003906c-4 0-7.3008 3.3008-7.3008 7.3008v34.898c0 4 3.3008 7.3008 7.3008 7.3008h7.3984c1.1992 0 2.1016 1 2.1016 2.1016v11.699l13.801-13.199c0.39844-0.39844 0.89844-0.60156 1.5-0.60156h32.398c3 0 5.6992-1.8984 6.8008-4.6016 0.39844-1.1016 1.6992-1.6016 2.8008-1.1992 0.89844 0.40234 1.5 1.6016 1 2.6992zm5.3984-33.297v0.30078l-3.1016 19.5c-0.60156 5-4.1992 7.8984-9.6016 7.8984h-22.895c-2.1992 0-4.1016-0.80078-5.6016-2.1992-0.69922 0.5-1.5 0.80078-2.3984 0.80078h-7.6992c-2.1992 0-4-1.8008-4-4v-24.102c0-2.1992 1.8008-4 4-4h7.6992c1.1992 0 2.1992 0.5 2.8984 1.3008 0.80078-0.19922 8.3008-2.6016 8.3008-9.1992v-9.3008c0-0.89844 0.60156-1.6992 1.5-2 0.5-0.19922 5-1.5 8.5 1.1016 2.1992 1.6016 3.3984 4.3984 3.3984 8.1992v7.5h10.699c4.6016-0.003906 8.3008 3.6992 8.3008 8.1992zm-43.797-1.5h-7.1016v23.602h7.1016zm39.5 1.3984c-0.10156-2.1016-1.8008-3.8008-4-3.8008h-12.801c-1.1992 0-2.1016-1-2.1016-2.1016v-9.6016c0-2.3008-0.5-3.8984-1.6016-4.6992-0.89844-0.69922-2.1992-0.80078-3.1992-0.69922v7.6016c0 10-10.898 13.102-11.398 13.301v19.898c0 2.1992 1.8008 4 4 4h22.801c4.8984 0 5.3008-3.1992 5.3984-4.1992v-0.10156z"/>
+        </svg>
+    </div>
+    <div class="feedback-div hide">
+      <form id="feedback-form" method="post" action="php/contact.php">
+        <div class="feedback">
+          <h4 id="feedback-heading">Send us Feedback!</h4>
+          <div class="rating color">
+            <div class="rate-base-layer" style="width: 90%; height: 47px; overflow: hidden; position: absolute; top: 0px; display: none; white-space: nowrap;"></div>
+            <div class="rate-select-layer" style="width: 90%; height: 47px; overflow: hidden; position: absolute; top: 0px; display: none; white-space: nowrap;"></div>
+            <div class="rate-hover-layer" style="width: 90%; height: 47px; overflow: hidden; position: absolute; top: 0px; display: none; white-space: nowrap;"></div>
+          </div>
+          <div class="user-input">
+          <input id="rating-field" name="star-rating" value=0></input>
+          <textarea placeholder="Remember, be nice!" cols="30" rows="5" class="text" type="text" name="message" required></textarea>
+          <button id="submit-btn" class="btt" type="submit">SUBMIT</button>
+          </div>
+        </div>
+        <div class="form-thankyou hide">
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg id="check-icon" class="color" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="m50 3.75c-25.504 0-46.25 20.746-46.25 46.25s20.746 46.25 46.25 46.25 46.25-20.746 46.25-46.25-20.746-46.25-46.25-46.25zm25.637 36.828-29.539 29.535c-0.89844 0.89844-2.1445 1.4141-3.4141 1.4141v2l-0.042969-2c-1.2891-0.011719-2.5391-0.55078-3.4336-1.4766l-14.902-15.441c-1.8516-1.918-1.7969-4.9805 0.12109-6.8281 0.90625-0.875 2.0977-1.3555 3.3516-1.3555 1.3242 0 2.5586 0.52344 3.4766 1.4766l11.488 11.906 26.062-26.062c0.91016-0.91016 2.125-1.4141 3.4141-1.4141s2.5039 0.50391 3.4141 1.4141c1.8867 1.8828 1.8867 4.9492 0.003907 6.832z"/>
+          </svg>
+          <h4>Thank You!</h4>
+        </div>
+      </form>
+    </div>
+
+    <div class="popup-overlay">
+      We use cookies to optimize our website.
+      We also share information about your use of our site with our analytics partners. You consent to our cookies if you continue to use our website.
+      More information can be found in our <a href="privacy.html">Privacy Policy</a>.
+      <div class="cookie-btn btt">Okay!</div>
+    </div>
 
     <footer>
       <div class="container">
-        <div class="row">
           <div class="version-link">
             <a href="https://github.com/by-Tim-Christiansen/pomodoro-clock/releases" target="_blank">Version 1.1</a>
           </div>
-
-          <div class="made">
-            Made with
-            <svg class="coffee" style="width:24px;height:24px" viewBox="0 0 24 24">
-              <path fill="#5D4037" d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-            </svg>
-            and
-            <svg class="heart" style="width:24px;height:24px" viewBox="0 0 24 24">
-              <path fill="#DC4444" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />\
-            </svg>
-            by
-            <a target="_blank" href="http://www.webcoast.media">WebCoast.media</a>
-          </div>
-
+          <div class="made">Made with<svg class="coffee" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#5D4037" d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg> and <svg class="heart" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#DC4444" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" /></svg> by <a target="_blank" href="http://www.webcoast.media">WebCoast.media</a> </div>
           <div class="imprint-link">
             <a href="imprint.html" target="_blank">Imprint</a> | <a href="privacy.html" target="_blank">Privacy Policy</a><br>
           </div>
-
-
-
-        </div>
       </div>
     </footer>
-=======
->>>>>>> master
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
     <script src="jquery-circle-progress/dist/circle-progress.js"></script>
     <script src="http://i.cloudup.com/KRNLFuBG4v.js"></script>
     <script src="js/script.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/push.js"></script>
     <script src="js/serviceWorker.min.js"></script>
+    <script src="js/rater.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <script>
       $(document).ready(function(){

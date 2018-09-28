@@ -1,3 +1,11 @@
+/*
+ * =================================
+ * =================================
+ * Copyright (c) 2018 Hauke Grothues
+ * =================================
+ * =================================
+ */
+
 //animate timer circle when page loads
 var c = $('#circle'); // declare variable to skim on typing
 c.circleProgress({
@@ -5,14 +13,11 @@ c.circleProgress({
   value: 1,
   size: 160,
   fill: {color: "#E74C3C"},
-  animation: { duration: 1000, easing: "circleProgressEasing"}
+  animation: { duration: 1000, easing: "circleProgressEasing" }
 });
 // main function
 $(document).ready(function(){
 
-  if (Push.Permission.has() !== true) {
-    Push.Permission.request();
-  }
   // declare variables for timer
   var sessionLength = 25, breakLength = 5, longBreakLength = 15;
   var pomoTimer = new Timer();
@@ -23,14 +28,47 @@ $(document).ready(function(){
   var notifTitle = "";
   var notifBody = "";
 
+  // ask for permission to send notifications
+  if (Push.Permission.has() !== true) {
+    Push.Permission.request();
+  }
+
+  // setup star-rating in feedback-form
+  var options = {
+    symbols: {
+            utf8_star: {
+                base: '&#9734;',
+                hover: '&#9733;',
+                selected: '&#9733;',
+            }
+          },
+    max_value: 5,
+    step_size: 1,
+  };
+  $(".rating").rate(options);
+  $(".rating").on("change", function(){
+    $("#rating-field").attr("value", ($(".rating").rate("getValue")));
+  });
+
   // function to play notification sound
   function play() {
     var audio=document.getElementById('audio1');
     audio.play();
   }
 
+  // open/close feedback-form
+  $(".feedback-btt").click(function(){
+    $(".feedback-div").toggleClass("hide");
+  });
+
   // interacting with timer
   $(".play-pause").click(function() {
+    if (pomoTimer.getStatus() == 'initialized' || pomoTimer.getStatus() == 'stopped') {
+      $(".play-pause").css("pointer-events", "none");
+      setTimeout(function() {
+        $(".play-pause").css("pointer-events", "auto");
+      }, 1000);
+    }
     runTimer(sessionLength);
   });
 
@@ -116,7 +154,7 @@ $(document).ready(function(){
             }
         });
         play();
-      })}, 1000);
+      }); }, 1000);
     }
 
     // PAUSE TIMER
@@ -139,6 +177,7 @@ $(document).ready(function(){
   // RESET TIMER
   $(".reset").click(function() {
 
+    if (pomoTimer.getStatus() !== 'initialized') {
     c.circleProgress({
       animationStartValue: 1- (pomoTimer.getDuration() / (timeInSeconds * 1000)),
       value: 1,
@@ -155,7 +194,7 @@ $(document).ready(function(){
     else {
       $(".timeDigital").text(breakLength + ":00");
     }
-
+  }
   });
 
   // switch between play and pause button on click
@@ -297,14 +336,24 @@ $(document).ready(function(){
 
   // toggle between timer and settings page
   $('.options').click(function() {
-
-    if ( $('.settingspage').hasClass("hide") ){
-      $('.settingspage').removeClass('hide');
-    }
-    else {
-      $('.settingspage').addClass('hide');
-    }
-
+      $(".settingspage").toggleClass("hide");
   });
+
+  // show hints on button click
+  $(".info-btt").click(function() {
+    $(".info-btt").toggleClass("active");
+    $(".info").toggleClass("hide");
+  });
+
+  // show thank you when form submitted
+
+      $('#feedback-form').ajaxForm( function() {
+          $(".feedback").fadeOut(100);
+          //$(".rating").fadeOut("slow");
+          //$(".user-input").fadeOut("slow");
+          $(".form-thankyou").delay(5000).removeClass("hide");
+      });
+
+
 
 });
