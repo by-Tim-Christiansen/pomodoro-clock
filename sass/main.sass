@@ -185,10 +185,7 @@ body
     width: 100%
     top: 0
     color: $white
-    visibility: visible
-    opacity: 1
-    transition: all ease-in 250ms
-    transition: background-color 250ms ease-in
+    transition: all ease-in 0.25s
     z-index: 2
     display: flex
     align-items: center
@@ -299,7 +296,7 @@ body
           text-align: center
           transform: none
   .hide
-    transition: visibility 0.25s, opacity 0.25s ease-out
+    transition: all ease 0.25s
     visibility: hidden
     opacity: 0
   .feedback-btt
@@ -365,6 +362,7 @@ body
     font-family: 'Indie Flower'
     font-size: 1.5rem
     text-align: left
+    transition: all ease 0.25s
     @media screen and (max-width: $break-sm)
       display: none
     div
